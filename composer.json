@@ -1,0 +1,38 @@
+{
+    "name": "graham-campbell/digitalocean",
+    "description": "DigitalOcean Is A DigitalOcean Bridge For Laravel 4.1+",
+    "keywords": ["laravel", "framework", "digitalocean", "digitalocean-v2", "DigitalOceanV2", "digitalocean bridge", "bridge", "DigitalOcean", "Laravel DigitalOcean", "Laravel-DigitalOcean", "Graham Campbell", "GrahamCampbell"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Graham Campbell",
+            "email": "graham@mineuk.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.7",
+        "illuminate/support": "~4.1",
+        "graham-campbell/manager": "~1.0",
+        "toin0u/digitalocean-v2": "0.1.*"
+    },
+    "require-dev": {
+        "graham-campbell/testbench": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "GrahamCampbell\\DigitalOcean\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GrahamCampbell\\Tests\\DigitalOcean\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
