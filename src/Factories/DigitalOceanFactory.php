@@ -24,7 +24,7 @@ use DigitalOceanV2\DigitalOceanV2;
  *
  * @package    Laravel-DigitalOcean
  * @author     Graham Campbell
- * @copyright  Copyright 2013-2014 Graham Campbell
+ * @copyright  Copyright 2014 Graham Campbell
  * @license    https://github.com/GrahamCampbell/Laravel-DigitalOcean/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-DigitalOcean
  */
