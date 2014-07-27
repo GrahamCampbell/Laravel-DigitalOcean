@@ -31,7 +31,7 @@ class DigitalOceanFactory
     /**
      * Make a new digitalocean client.
      *
-     * @param array $config
+     * @param string[] $config
      *
      * @return \DigitalOceanV2\DigitalOceanV2
      */
@@ -47,7 +47,7 @@ class DigitalOceanFactory
     /**
      * Get the configuration data.
      *
-     * @param array $config
+     * @param string[] $config
      *
      * @throws \InvalidArgumentException
      *
@@ -65,7 +65,7 @@ class DigitalOceanFactory
     /**
      * Get the buzz adapter.
      *
-     * @param array $config
+     * @param string[] $config
      *
      * @return \DigitalOceanV2\Adapter\BuzzAdapter
      */
