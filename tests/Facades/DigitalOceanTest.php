@@ -22,11 +22,9 @@ use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
 /**
  * This is the digitalocean facade test class.
  *
- * @package    Laravel-DigitalOcean
- * @author     Graham Campbell
- * @copyright  Copyright 2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-DigitalOcean/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-DigitalOcean
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-DigitalOcean/blob/master/LICENSE.md> Apache 2.0
  */
 class DigitalOceanTest extends AbstractTestCase
 {

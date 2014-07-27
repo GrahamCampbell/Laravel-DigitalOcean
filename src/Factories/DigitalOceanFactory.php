@@ -22,18 +22,17 @@ use DigitalOceanV2\DigitalOceanV2;
 /**
  * This is the digitalocean factory class.
  *
- * @package    Laravel-DigitalOcean
- * @author     Graham Campbell
- * @copyright  Copyright 2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-DigitalOcean/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-DigitalOcean
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-DigitalOcean/blob/master/LICENSE.md> Apache 2.0
  */
 class DigitalOceanFactory
 {
     /**
      * Make a new digitalocean client.
      *
-     * @param  array  $config
+     * @param array $config
+     *
      * @return \DigitalOceanV2\DigitalOceanV2
      */
     public function make(array $config)
@@ -48,10 +47,11 @@ class DigitalOceanFactory
     /**
      * Get the configuration data.
      *
-     * @param  array  $config
-     * @return array
+     * @param array $config
      *
      * @throws \InvalidArgumentException
+     *
+     * @return string[]
      */
     protected function getConfig(array $config)
     {
@@ -65,7 +65,8 @@ class DigitalOceanFactory
     /**
      * Get the buzz adapter.
      *
-     * @param  array  $config
+     * @param array $config
+     *
      * @return \DigitalOceanV2\Adapter\BuzzAdapter
      */
     protected function getAdapter(array $config)

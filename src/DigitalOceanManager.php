@@ -23,26 +23,25 @@ use Illuminate\Config\Repository;
 /**
  * This is the digitalocean manager class.
  *
- * @package    Laravel-DigitalOcean
- * @author     Graham Campbell
- * @copyright  Copyright 2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-DigitalOcean/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-DigitalOcean
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-DigitalOcean/blob/master/LICENSE.md> Apache 2.0
  */
 class DigitalOceanManager extends AbstractManager
 {
     /**
      * The factory instance.
      *
-     * @var \GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory
+     * @type \GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory
      */
     protected $factory;
 
     /**
      * Create a new digitalocean manager instance.
      *
-     * @param  \Illuminate\Config\Repository   $config
-     * @param  \GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory  $factory
+     * @param \Illuminate\Config\Repository                              $config
+     * @param \GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory $factory
+     *
      * @return void
      */
     public function __construct(Repository $config, DigitalOceanFactory $factory)
@@ -54,7 +53,8 @@ class DigitalOceanManager extends AbstractManager
     /**
      * Create the connection instance.
      *
-     * @param  array  $config
+     * @param array $config
+     *
      * @return \DigitalOceanV2\DigitalOceanV2
      */
     protected function createConnection(array $config)
