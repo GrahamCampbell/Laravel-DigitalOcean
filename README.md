@@ -35,7 +35,9 @@ Laravel DigitalOcean requires connection configuration.
 
 To get started, first publish the package config file:
 
-    php artisan config:publish graham-campbell/digitalocean
+```bash
+$ php artisan config:publish graham-campbell/digitalocean
+```
 
 There are two config options:
 
