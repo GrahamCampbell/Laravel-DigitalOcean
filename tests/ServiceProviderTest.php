@@ -29,6 +29,11 @@ class ServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTestCaseTrait;
 
+    public function testDigitalOceanFactoryIsInjectable()
+    {
+        $this->assertIsInjectable('GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory');
+    }
+
     public function testDigitalOceanManagerIsInjectable()
     {
         $this->assertIsInjectable('GrahamCampbell\DigitalOcean\DigitalOceanManager');

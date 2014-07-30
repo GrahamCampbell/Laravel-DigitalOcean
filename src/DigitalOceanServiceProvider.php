@@ -51,19 +51,34 @@ class DigitalOceanServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerDigitalOceanManager();
+        $this->registerFactory();
+        $this->registerManager();
     }
 
     /**
-     * Register the digitalocean manager class.
+     * Register the factory class.
      *
      * @return void
      */
-    protected function registerDigitalOceanManager()
+    protected function registerFactory()
+    {
+        $this->app->bindShared('digitalocean.factory', function ($app) {
+            return new Factories\DigitalOceanFactory();
+        });
+
+        $this->app->alias('digitalocean.factory', 'GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory');
+    }
+
+    /**
+     * Register the manager class.
+     *
+     * @return void
+     */
+    protected function registerManager()
     {
         $this->app->bindShared('digitalocean', function ($app) {
             $config = $app['config'];
-            $factory = new Factories\DigitalOceanFactory();
+            $factory = $app['digitalocean.factory'];
 
             return new DigitalOceanManager($config, $factory);
         });
@@ -79,7 +94,8 @@ class DigitalOceanServiceProvider extends ServiceProvider
     public function provides()
     {
         return array(
-            'digitalocean'
+            'digitalocean',
+            'digitalocean.factory'
         );
     }
 }
