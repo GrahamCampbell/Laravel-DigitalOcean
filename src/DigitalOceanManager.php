@@ -32,7 +32,7 @@ class DigitalOceanManager extends AbstractManager
     /**
      * The factory instance.
      *
-     * @type \GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory
+     * @var \GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory
      */
     protected $factory;
 
