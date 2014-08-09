@@ -64,6 +64,80 @@ This facade will dynamically pass static method calls to the `'digitalocean'` ob
 
 This class contains no public methods of interest. This class should be added to the providers array in `app/config/app.php`. This class will setup ioc bindings.
 
+##### Real Examples
+
+Here you can see an example of just how simple this package is to use. Out of the box, the default adapter is `main`. After you enter your authentication details in the config file, it will just work:
+
+```php
+use GrahamCampbell\DigitalOcean\Facades\DigitalOcean;
+// you can alias this in app/config/app.php if you like
+
+DigitalOcean::droplet()->powerOn(12345);
+// we're done here - how easy was that, it just works!
+
+DigitalOcean::size()->getAll();
+// this example is simple, and there are far more methods available
+```
+
+The digitalocean manager will behave like it is a `\DigitalOceanV2\DigitalOceanV2` class. If you want to call specific connections, you can do with the `connection` method:
+
+```php
+use GrahamCampbell\DigitalOcean\Facades\DigitalOcean;
+
+// the alternative connection is the other example provided in the default config
+DigitalOcean::connection('alternative')->rateLimit()->getRateLimit()->remaining;
+
+// let's check how long we have until the limit will reset
+DigitalOcean::connection('alternative')->rateLimit()->getRateLimit()->reset;
+```
+
+With that in mind, note that:
+
+```php
+use GrahamCampbell\DigitalOcean\Facades\DigitalOcean;
+
+// writing this:
+DigitalOcean::connection('main')->region()->getAll();
+
+// is identical to writing this:
+DigitalOcean::region()->getAll();
+
+// and is also identical to writing this:
+DigitalOcean::connection()->region()->getAll();
+
+// this is because the main connection is configured to be the default
+DigitalOcean::getDefaultConnection(); // this will return main
+
+// we can change the default connection
+DigitalOcean::setDefaultConnection('alternative'); // the default is now alternative
+```
+
+If you prefer to use dependency injection over facades like me, then you can easily inject the manager like so:
+
+```php
+use GrahamCampbell\DigitalOcean\DigitalOceanManager;
+use Illuminate\Support\Facades\App; // you probably have this aliased already
+
+class Foo
+{
+    protected $digitalocean;
+
+    public function __construct(DigitalOceanManager $digitalocean)
+    {
+        $this->digitalocean = $digitalocean;
+    }
+
+    public function bar()
+    {
+        $this->digitalocean->region()->getAll();
+    }
+}
+
+App::make('Foo')->bar();
+```
+
+For more information on how to use the `\DigitalOceanV2\DigitalOceanV2` class we are calling behind the scenes here, check out the docs at https://github.com/toin0u/DigitalOceanV2#action, and the manager class at https://github.com/GrahamCampbell/Laravel-Manager#usage.
+
 ##### Further Information
 
 There are other classes in this package that are not documented here. This is because they are not intended for public use and are used internally by this package.
