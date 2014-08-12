@@ -23,6 +23,16 @@ use Illuminate\Config\Repository;
 /**
  * This is the digitalocean manager class.
  *
+ * @method \DigitalOceanV2\Api\Action action()
+ * @method \DigitalOceanV2\Api\Image image()
+ * @method \DigitalOceanV2\Api\Domain domain()
+ * @method \DigitalOceanV2\Api\DomainRecord domainRecord()
+ * @method \DigitalOceanV2\Api\Size size()
+ * @method \DigitalOceanV2\Api\Region region()
+ * @method \DigitalOceanV2\Api\Key key()
+ * @method \DigitalOceanV2\Api\Droplet droplet()
+ * @method \DigitalOceanV2\Api\RateLimit rateLimit()
+ *
  * @author    Graham Campbell <graham@mineuk.com>
  * @copyright 2014 Graham Campbell
  * @license   <https://github.com/GrahamCampbell/Laravel-DigitalOcean/blob/master/LICENSE.md> Apache 2.0
