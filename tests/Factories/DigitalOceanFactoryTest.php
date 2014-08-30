@@ -16,7 +16,6 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean\Factories;
 
-use Mockery;
 use GrahamCampbell\Tests\DigitalOcean\AbstractTestCase;
 use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
 
