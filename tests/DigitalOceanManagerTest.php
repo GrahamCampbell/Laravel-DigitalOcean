@@ -38,7 +38,7 @@ class DigitalOceanManagerTest extends AbstractTestBenchTestCase
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/digitalocean::default')->andReturn('main');
 
-        $this->assertEquals($manager->getConnections(), array());
+        $this->assertSame(array(), $manager->getConnections());
 
         $return = $manager->connection();
 
