@@ -1,6 +1,6 @@
 {
     "name": "graham-campbell/digitalocean",
-    "description": "DigitalOcean Is A DigitalOcean Bridge For Laravel 4.1+",
+    "description": "DigitalOcean Is A DigitalOcean Bridge For Laravel 4.1/4.2",
     "keywords": ["laravel", "framework", "digitalocean", "digitalocean-v2", "DigitalOceanV2", "digitalocean bridge", "bridge", "DigitalOcean", "Laravel DigitalOcean", "Laravel-DigitalOcean", "Graham Campbell", "GrahamCampbell"],
     "license": "Apache-2.0",
     "authors": [
