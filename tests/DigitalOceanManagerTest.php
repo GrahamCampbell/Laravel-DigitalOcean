@@ -49,7 +49,7 @@ class DigitalOceanManagerTest extends AbstractTestBenchTestCase
 
     protected function getManager(array $config)
     {
-        $repo = Mockery::mock('Illuminate\Config\Repository');
+        $repo = Mockery::mock('Illuminate\Contracts\Config\Config');
         $factory = Mockery::mock('GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory');
 
         $manager = new DigitalOceanManager($repo, $factory);
