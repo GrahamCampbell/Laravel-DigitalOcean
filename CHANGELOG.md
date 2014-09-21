@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V1.0 RC 1 (Upcoming)
+
+* Support both buzzle and buzz adapters
+* Improved the test suite
+
+
 ## V0.1.1 Alpha (12/08/2014)
 
 * Expose the factory class in the ioc
