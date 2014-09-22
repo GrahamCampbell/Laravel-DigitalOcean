@@ -18,7 +18,7 @@ namespace GrahamCampbell\DigitalOcean;
 
 use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
 use GrahamCampbell\Manager\AbstractManager;
-use Illuminate\Contracts\Config\Config;
+use Illuminate\Contracts\Config\Repository;
 
 /**
  * This is the digitalocean manager class.
@@ -49,12 +49,12 @@ class DigitalOceanManager extends AbstractManager
     /**
      * Create a new digitalocean manager instance.
      *
-     * @param \Illuminate\Contracts\Config\Config                         $config
+     * @param \Illuminate\Contracts\Config\Repository                    $config
      * @param \GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory $factory
      *
      * @return void
      */
-    public function __construct(Config $config, DigitalOceanFactory $factory)
+    public function __construct(Repository $config, DigitalOceanFactory $factory)
     {
         parent::__construct($config);
         $this->factory = $factory;
