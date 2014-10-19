@@ -16,8 +16,8 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean\Facades;
 
-use GrahamCampbell\Tests\DigitalOcean\AbstractTestCase;
 use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
+use GrahamCampbell\Tests\DigitalOcean\AbstractTestCase;
 
 /**
  * This is the digitalocean facade test class.

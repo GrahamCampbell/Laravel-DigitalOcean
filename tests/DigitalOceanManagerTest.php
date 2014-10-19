@@ -16,9 +16,9 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean;
 
-use Mockery;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
+use Mockery;
 
 /**
  * This is the digitalocean manager test class.

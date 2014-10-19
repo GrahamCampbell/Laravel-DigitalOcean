@@ -16,8 +16,8 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean\Factories;
 
-use GrahamCampbell\Tests\DigitalOcean\AbstractTestCase;
 use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
+use GrahamCampbell\Tests\DigitalOcean\AbstractTestCase;
 
 /**
  * This is the filesystem factory test class.

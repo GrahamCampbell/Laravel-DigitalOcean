@@ -11,6 +11,8 @@ CHANGE LOG
 
 * Support both buzzle and buzz adapters
 * Improved the test suite
+* Added cs fixers to the test suite
+* Improved the docs
 
 
 ## V0.1.1 Alpha (12/08/2014)
