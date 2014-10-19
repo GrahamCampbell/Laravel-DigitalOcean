@@ -10,6 +10,10 @@ CHANGE LOG
 ## V1.0 RC 1 (Upcoming)
 
 * Support both buzzle and buzz adapters
+
+
+## V0.1.2 Alpha (19/10/2014)
+
 * Improved the test suite
 * Added cs fixers to the test suite
 * Improved the docs
