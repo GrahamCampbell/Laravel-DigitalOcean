@@ -1,22 +1,17 @@
 Laravel DigitalOcean
 ====================
 
-
-[![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-DigitalOcean/master.svg?style=flat-square)](https://travis-ci.org/GrahamCampbell/Laravel-DigitalOcean)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-DigitalOcean.svg?style=flat-square)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-DigitalOcean/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-DigitalOcean.svg?style=flat-square)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-DigitalOcean)
-[![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-DigitalOcean.svg?style=flat-square)](https://github.com/GrahamCampbell/Laravel-DigitalOcean/releases)
-
-
-### Looking for a laravel 5 compatable version?
-
-Checkout the [master branch](https://github.com/GrahamCampbell/Laravel-DigitalOcean/tree/master), installable by requiring `"graham-campbell/digitalocean": "~2.0"`.
-
-
-## Introduction
-
 Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a [DigitalOceanV2](https://github.com/toin0u/DigitalOceanV2) bridge for [Laravel 4.1/4.2](http://laravel.com). It utilises my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-DigitalOcean/releases), [license](LICENSE.md), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
+
+![Laravel DigitalOcean](https://cloud.githubusercontent.com/assets/2829600/4432301/c13a54ba-468c-11e4-8e67-3b43ca8e232e.PNG)
+
+<p align="center">
+<a href="https://travis-ci.org/GrahamCampbell/Laravel-DigitalOcean"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-DigitalOcean/master.svg?style=flat-square" alt="Build Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-DigitalOcean/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-DigitalOcean.svg?style=flat-square" alt="Coverage Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-DigitalOcean"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-DigitalOcean.svg?style=flat-square" alt="Quality Score"></img></a>
+<a href="LICENSE.md"><img src="https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
+<a href="https://github.com/GrahamCampbell/Laravel-DigitalOcean/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-DigitalOcean.svg?style=flat-square" alt="Latest Version"></img></a>
+</p>
 
 
 ## Installation
@@ -32,6 +27,10 @@ Once Laravel DigitalOcean is installed, you need to register the service provide
 You can register the DigitalOcean facade in the `aliases` key of your `app/config/app.php` file if you like.
 
 * `'DigitalOcean' => 'GrahamCampbell\DigitalOcean\Facades\DigitalOcean'`
+
+#### Looking for a laravel 5 compatable version?
+
+Checkout the [master branch](https://github.com/GrahamCampbell/Laravel-DigitalOcean/tree/master), installable by requiring `"graham-campbell/digitalocean": "~2.0"`.
 
 
 ## Configuration
