@@ -95,7 +95,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
     {
         return array(
             'digitalocean',
-            'digitalocean.factory'
+            'digitalocean.factory',
         );
     }
 }
