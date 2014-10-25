@@ -36,17 +36,19 @@ return array(
     |
     | Here are each of the connections setup for your application. Example
     | configuration has been included, but you may add as many connections as
-    | you would like.
+    | you would like. Both guzzle and buzz drivers are supported.
     |
     */
 
     'connections' => array(
 
         'main' => array(
+            'driver'  => 'guzzle',
             'token'   => 'your-token',
         ),
 
         'alternative' => array(
+            'driver'  => 'buzz',
             'token'   => 'your-token',
         ),
 

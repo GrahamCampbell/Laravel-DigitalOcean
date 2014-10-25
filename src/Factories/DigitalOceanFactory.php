@@ -16,8 +16,8 @@
 
 namespace GrahamCampbell\DigitalOcean\Factories;
 
-use DigitalOceanV2\Adapter\BuzzAdapter;
 use DigitalOceanV2\DigitalOceanV2;
+use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;
 
 /**
  * This is the digitalocean factory class.
@@ -29,6 +29,25 @@ use DigitalOceanV2\DigitalOceanV2;
 class DigitalOceanFactory
 {
     /**
+     * The adapter factory instance.
+     *
+     * @var \GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory
+     */
+    protected $adapter;
+
+    /**
+     * Create a new filesystem factory instance.
+     *
+     * @param \GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory $adapter
+     *
+     * @return void
+     */
+    public function __construct(AdapterFactory $adapter)
+    {
+        $this->adapter = $adapter;
+    }
+
+    /**
      * Make a new digitalocean client.
      *
      * @param string[] $config
@@ -37,40 +56,30 @@ class DigitalOceanFactory
      */
     public function make(array $config)
     {
-        $config = $this->getConfig($config);
-
-        $adapter = $this->getAdapter($config);
+        $adapter = $this->createAdapter($config);
 
         return new DigitalOceanV2($adapter);
     }
 
     /**
-     * Get the configuration data.
+     * Establish an adapter connection.
      *
-     * @param string[] $config
+     * @param array $config
      *
-     * @throws \InvalidArgumentException
-     *
-     * @return string[]
+     * @return \DigitalOceanV2\Adapter\AdapterInterface
      */
-    protected function getConfig(array $config)
+    public function createAdapter(array $config)
     {
-        if (!array_key_exists('token', $config)) {
-            throw new \InvalidArgumentException('The digitalocean client requires configuration.');
-        }
-
-        return array_only($config, array('token'));
+        return $this->adapter->make($config);
     }
 
     /**
-     * Get the buzz adapter.
+     * Get the adapter factory instance.
      *
-     * @param string[] $config
-     *
-     * @return \DigitalOceanV2\Adapter\BuzzAdapter
+     * @return \GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory
      */
-    protected function getAdapter(array $config)
+    public function getAdapter()
     {
-        return new BuzzAdapter($config['token']);
+        return $this->adapter;
     }
 }
