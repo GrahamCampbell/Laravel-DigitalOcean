@@ -13,10 +13,16 @@
         "php": ">=5.4.7",
         "illuminate/support": "~4.1",
         "graham-campbell/manager": "~1.0",
-        "toin0u/digitalocean-v2": "0.1.*"
+        "toin0u/digitalocean-v2": "0.2.*"
     },
     "require-dev": {
-        "graham-campbell/testbench": "~1.0"
+        "graham-campbell/testbench": "~1.0",
+        "kriswallsmith/buzz": "~0.10",
+        "guzzle/guzzle": "~3.7"
+    },
+    "suggest": {
+        "kriswallsmith/buzz": "Enables the buzz connector.",
+        "guzzle/guzzle": "Enables the guzzle connector."
     },
     "autoload": {
         "psr-4": {

@@ -63,7 +63,9 @@ class DigitalOceanServiceProvider extends ServiceProvider
     protected function registerFactory()
     {
         $this->app->bindShared('digitalocean.factory', function ($app) {
-            return new Factories\DigitalOceanFactory();
+            $adapter = new Adapters\ConnectionFactory();
+
+            return new Factories\DigitalOceanFactory($adapter);
         });
 
         $this->app->alias('digitalocean.factory', 'GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory');

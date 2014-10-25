@@ -18,9 +18,10 @@ namespace GrahamCampbell\Tests\DigitalOcean\Factories;
 
 use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
 use GrahamCampbell\Tests\DigitalOcean\AbstractTestCase;
+use Mockery;
 
 /**
- * This is the filesystem factory test class.
+ * This is the digitalocean factory test class.
  *
  * @author    Graham Campbell <graham@mineuk.com>
  * @copyright 2014 Graham Campbell
@@ -28,27 +29,52 @@ use GrahamCampbell\Tests\DigitalOcean\AbstractTestCase;
  */
 class DigitalOceanFactoryTest extends AbstractTestCase
 {
-    public function testMakeStandard()
+    public function testMake()
     {
-        $factory = $this->getFactory();
+        $config = array('driver' => 'buzz', 'token'  => 'your-token');
 
-        $return = $factory->make(array('token'  => 'your-token'));
+        $manager = Mockery::mock('GrahamCampbell\DigitalOcean\DigitalOceanManager');
+
+        $factory = $this->getMockedFactory($config, $manager);
+
+        $return = $factory->make($config, $manager);
 
         $this->assertInstanceOf('DigitalOceanV2\DigitalOceanV2', $return);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testMakeWithoutToken()
+    public function testAdapter()
     {
-        $factory = $this->getFactory();
+        $factory = $this->getDigitalOceanFactory();
 
-        $factory->make(array());
+        $config = array('driver' => 'guzzle', 'token'  => 'your-token');
+
+        $factory->getAdapter()->shouldReceive('make')->once()
+            ->with($config)->andReturn(Mockery::mock('DigitalOceanV2\Adapter\AdapterInterface'));
+
+        $return = $factory->createAdapter($config);
+
+        $this->assertInstanceOf('DigitalOceanV2\Adapter\AdapterInterface', $return);
     }
 
-    protected function getFactory()
+    protected function getDigitalOceanFactory()
     {
-        return new DigitalOceanFactory();
+        $adapter = Mockery::mock('GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory');
+
+        return new DigitalOceanFactory($adapter);
+    }
+
+    protected function getMockedFactory($config, $manager)
+    {
+        $adapter = Mockery::mock('GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory');
+
+        $adapterMock = Mockery::mock('DigitalOceanV2\Adapter\AdapterInterface');
+
+        $mock = Mockery::mock('GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory[createAdapter]', array($adapter));
+
+        $mock->shouldReceive('createAdapter')->once()
+            ->with($config)
+            ->andReturn($adapterMock);
+
+        return $mock;
     }
 }
