@@ -20,7 +20,7 @@ Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](http
 
 To get the latest version of Laravel DigitalOcean, simply require `"graham-campbell/digitalocean": "~2.0"` in your `composer.json` file.
 
-You will need to install at least one of the following dependencies for a each driver:
+You will need to install at least one of the following dependencies for each driver:
 
 * The buzz connector requires `"kriswallsmith/buzz": "~0.10"` in your `composer.json`.
 * The guzzle connector requires `"guzzle/guzzle": "~3.7"` in your `composer.json`.
