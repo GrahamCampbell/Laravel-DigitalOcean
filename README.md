@@ -24,8 +24,6 @@ To get the latest version of Laravel DigitalOcean, simply add the following line
 "graham-campbell/digitalocean": "~2.0"
 ```
 
-You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
-
 You will need to install at least one of the following dependencies for each driver:
 
 * The buzz connector requires `"kriswallsmith/buzz": "~0.10"` in your `composer.json`.
