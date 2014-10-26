@@ -9,6 +9,11 @@ CHANGE LOG
 
 ## V1.0 RC 1 (Upcoming)
 
+* TODO
+
+
+## V0.2 Alpha (Upcoming)
+
 * Support both buzzle and buzz adapters
 
 
