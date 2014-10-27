@@ -62,7 +62,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
      */
     protected function registerFactory()
     {
-        $this->app->bindShared('digitalocean.factory', function ($app) {
+        $this->app->singleton('digitalocean.factory', function ($app) {
             $adapter = new Adapters\ConnectionFactory();
 
             return new Factories\DigitalOceanFactory($adapter);
@@ -78,7 +78,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
      */
     protected function registerManager()
     {
-        $this->app->bindShared('digitalocean', function ($app) {
+        $this->app->singleton('digitalocean', function ($app) {
             $config = $app['config'];
             $factory = $app['digitalocean.factory'];
 
