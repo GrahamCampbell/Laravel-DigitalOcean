@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -40,18 +40,18 @@ return array(
     |
     */
 
-    'connections' => array(
+    'connections' => [
 
-        'main' => array(
+        'main' => [
             'driver'  => 'guzzle',
             'token'   => 'your-token',
-        ),
+        ],
 
-        'alternative' => array(
+        'alternative' => [
             'driver'  => 'buzz',
             'token'   => 'your-token',
-        ),
+        ],
 
-    ),
+    ],
 
-);
+];

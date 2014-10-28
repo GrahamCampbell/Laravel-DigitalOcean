@@ -56,7 +56,7 @@ class BuzzConnector implements ConnectorInterface
             throw new \InvalidArgumentException('The buzz connector requires configuration.');
         }
 
-        return array_only($config, array('token'));
+        return array_only($config, ['token']);
     }
 
     /**

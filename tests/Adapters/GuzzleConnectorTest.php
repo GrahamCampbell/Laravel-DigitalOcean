@@ -32,7 +32,7 @@ class GuzzleConnectorTest extends AbstractTestCase
     {
         $connector = $this->getGuzzleConnector();
 
-        $return = $connector->connect(array('token' => 'your-token'));
+        $return = $connector->connect(['token' => 'your-token']);
 
         $this->assertInstanceOf('DigitalOceanV2\Adapter\GuzzleAdapter', $return);
     }
@@ -44,7 +44,7 @@ class GuzzleConnectorTest extends AbstractTestCase
     {
         $connector = $this->getGuzzleConnector();
 
-        $connector->connect(array());
+        $connector->connect([]);
     }
 
     protected function getGuzzleConnector()

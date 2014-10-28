@@ -56,7 +56,7 @@ class GuzzleConnector implements ConnectorInterface
             throw new \InvalidArgumentException('The guzzle connector requires configuration.');
         }
 
-        return array_only($config, array('token'));
+        return array_only($config, ['token']);
     }
 
     /**
