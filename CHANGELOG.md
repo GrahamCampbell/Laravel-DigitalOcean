@@ -7,7 +7,7 @@ CHANGE LOG
 * TODO
 
 
-## V0.2 Alpha (Upcoming)
+## V0.2 Alpha (30/10/2014)
 
 * Support both buzzle and buzz adapters
 
