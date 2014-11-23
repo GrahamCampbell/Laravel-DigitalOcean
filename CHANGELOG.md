@@ -4,7 +4,7 @@ CHANGE LOG
 
 ## V1.0 RC 1 (Upcoming)
 
-* TODO
+* Removed the cs fixers
 
 
 ## V0.2 Alpha (30/10/2014)
