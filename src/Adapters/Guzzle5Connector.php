@@ -16,24 +16,24 @@
 
 namespace GrahamCampbell\DigitalOcean\Adapters;
 
-use DigitalOceanV2\Adapter\GuzzleAdapter;
+use DigitalOceanV2\Adapter\Guzzle5Adapter;
 use GrahamCampbell\Manager\ConnectorInterface;
 
 /**
- * This is the guzzle connector class.
+ * This is the guzzle5 connector class.
  *
  * @author    Graham Campbell <graham@mineuk.com>
  * @guzzleright 2014 Graham Campbell
  * @license   <https://github.com/GrahamCampbell/Laravel-DigitalOcean/blob/master/LICENSE.md> Apache 2.0
  */
-class GuzzleConnector implements ConnectorInterface
+class Guzzle5Connector implements ConnectorInterface
 {
     /**
      * Establish an adapter connection.
      *
      * @param string[] $config
      *
-     * @return \DigitalOceanV2\Adapter\GuzzleAdapter
+     * @return \DigitalOceanV2\Adapter\Guzzle5Adapter
      */
     public function connect(array $config)
     {
@@ -54,21 +54,21 @@ class GuzzleConnector implements ConnectorInterface
     protected function getConfig(array $config)
     {
         if (!array_key_exists('token', $config)) {
-            throw new \InvalidArgumentException('The guzzle connector requires configuration.');
+            throw new \InvalidArgumentException('The guzzle5 connector requires configuration.');
         }
 
-        return array_only($config, ['token']);
+        return array_only($config, array('token'));
     }
 
     /**
-     * Get the guzzle adapter.
+     * Get the guzzle5 adapter.
      *
      * @param string[] $config
      *
-     * @return \DigitalOceanV2\Adapter\GuzzleAdapter
+     * @return \DigitalOceanV2\Adapter\Guzzle5Adapter
      */
     protected function getAdapter(array $config)
     {
-        return new GuzzleAdapter($config['token']);
+        return new Guzzle5Adapter($config['token']);
     }
 }

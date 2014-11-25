@@ -57,6 +57,8 @@ class ConnectionFactory
                 return new BuzzConnector();
             case 'guzzle':
                 return new GuzzleConnector();
+            case 'guzzle5':
+                return new Guzzle5Connector();
         }
 
         throw new \InvalidArgumentException("Unsupported driver [{$config['driver']}]");

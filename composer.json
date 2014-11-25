@@ -14,12 +14,13 @@
         "illuminate/contracts": "~5.0",
         "illuminate/support": "~5.0",
         "graham-campbell/manager": "~2.0",
-        "toin0u/digitalocean-v2": "0.2.*"
+        "toin0u/digitalocean-v2": "0.3.*"
     },
     "require-dev": {
         "graham-campbell/testbench": "~2.0",
         "kriswallsmith/buzz": "~0.10",
-        "guzzle/guzzle": "~3.7"
+        "guzzle/guzzle": "~3.7",
+        "guzzlehttp/guzzle" : "~5.0"
     },
     "suggest": {
         "kriswallsmith/buzz": "Enables the buzz connector.",
