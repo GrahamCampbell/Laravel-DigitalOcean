@@ -7,7 +7,7 @@ CHANGE LOG
 * TODO
 
 
-## V0.3 Alpha (Upcoming)
+## V0.3 Alpha (25/11/2014)
 
 * Added support for guzzle 5
 * Removed the cs fixers
