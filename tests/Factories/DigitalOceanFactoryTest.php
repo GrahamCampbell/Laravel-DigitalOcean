@@ -46,7 +46,7 @@ class DigitalOceanFactoryTest extends AbstractTestCase
     {
         $factory = $this->getDigitalOceanFactory();
 
-        $config = array('driver' => 'guzzle', 'token'  => 'your-token');
+        $config = array('driver' => 'guzzle5', 'token'  => 'your-token');
 
         $factory->getAdapter()->shouldReceive('make')->once()
             ->with($config)->andReturn(Mockery::mock('DigitalOceanV2\Adapter\AdapterInterface'));

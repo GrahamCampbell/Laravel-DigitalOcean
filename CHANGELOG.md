@@ -4,6 +4,12 @@ CHANGE LOG
 
 ## V1.0 RC 1 (Upcoming)
 
+* TODO
+
+
+## V0.3 Alpha (Upcoming)
+
+* Added support for guzzle 5
 * Removed the cs fixers
 
 
