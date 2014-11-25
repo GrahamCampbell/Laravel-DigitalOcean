@@ -38,6 +38,7 @@ class BuzzConnector implements ConnectorInterface
     public function connect(array $config)
     {
         $config = $this->getConfig($config);
+
         return $this->getAdapter($config);
     }
 
