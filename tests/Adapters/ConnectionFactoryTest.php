@@ -43,6 +43,7 @@ class ConnectionFactoryTest extends AbstractTestCase
         return array(
             array('buzz', 'BuzzConnector'),
             array('guzzle', 'GuzzleConnector'),
+            array('guzzle5', 'Guzzle5Connector'),
         );
     }
 
