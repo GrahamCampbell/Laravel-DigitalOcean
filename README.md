@@ -28,6 +28,7 @@ You will need to install at least one of the following dependencies for each dri
 
 * The buzz connector requires `"kriswallsmith/buzz": "~0.10"` in your `composer.json`.
 * The guzzle connector requires `"guzzle/guzzle": "~3.7"` in your `composer.json`.
+* The guzzle 5 connector requires `"guzzlehttp/guzzle": "~5.0"` in your `composer.json`.
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
