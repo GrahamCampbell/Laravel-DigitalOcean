@@ -32,7 +32,7 @@ class BuzzConnectorTest extends AbstractTestCase
     {
         $connector = $this->getBuzzConnector();
 
-        $return = $connector->connect(array('token' => 'your-token'));
+        $return = $connector->connect(['token' => 'your-token']);
 
         $this->assertInstanceOf('DigitalOceanV2\Adapter\BuzzAdapter', $return);
     }
@@ -44,7 +44,7 @@ class BuzzConnectorTest extends AbstractTestCase
     {
         $connector = $this->getBuzzConnector();
 
-        $connector->connect(array());
+        $connector->connect([]);
     }
 
     protected function getBuzzConnector()

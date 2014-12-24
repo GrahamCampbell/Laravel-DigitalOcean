@@ -31,7 +31,7 @@ class DigitalOceanFactoryTest extends AbstractTestCase
 {
     public function testMake()
     {
-        $config = array('driver' => 'buzz', 'token'  => 'your-token');
+        $config = ['driver' => 'buzz', 'token'  => 'your-token'];
 
         $manager = Mockery::mock('GrahamCampbell\DigitalOcean\DigitalOceanManager');
 
@@ -46,7 +46,7 @@ class DigitalOceanFactoryTest extends AbstractTestCase
     {
         $factory = $this->getDigitalOceanFactory();
 
-        $config = array('driver' => 'guzzle5', 'token'  => 'your-token');
+        $config = ['driver' => 'guzzle5', 'token'  => 'your-token'];
 
         $factory->getAdapter()->shouldReceive('make')->once()
             ->with($config)->andReturn(Mockery::mock('DigitalOceanV2\Adapter\AdapterInterface'));
@@ -69,7 +69,7 @@ class DigitalOceanFactoryTest extends AbstractTestCase
 
         $adapterMock = Mockery::mock('DigitalOceanV2\Adapter\AdapterInterface');
 
-        $mock = Mockery::mock('GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory[createAdapter]', array($adapter));
+        $mock = Mockery::mock('GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory[createAdapter]', [$adapter]);
 
         $mock->shouldReceive('createAdapter')->once()
             ->with($config)
