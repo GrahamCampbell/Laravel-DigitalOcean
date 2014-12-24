@@ -13,7 +13,7 @@
         "php": ">=5.4.7",
         "illuminate/support": "~4.1",
         "graham-campbell/manager": "~1.0",
-        "toin0u/digitalocean-v2": "0.3.*"
+        "toin0u/digitalocean-v2": "0.4.*"
     },
     "require-dev": {
         "graham-campbell/testbench": "~1.0",
