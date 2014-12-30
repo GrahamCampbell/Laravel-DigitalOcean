@@ -23,7 +23,7 @@ use GrahamCampbell\Manager\ConnectorInterface;
  * This is the guzzle connector class.
  *
  * @author    Graham Campbell <graham@mineuk.com>
- * @guzzleright 2014 Graham Campbell
+ * @copyright 2014 Graham Campbell
  * @license   <https://github.com/GrahamCampbell/Laravel-DigitalOcean/blob/master/LICENSE.md> Apache 2.0
  */
 class GuzzleConnector implements ConnectorInterface
