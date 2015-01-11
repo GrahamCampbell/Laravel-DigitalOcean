@@ -9,20 +9,26 @@ CHANGE LOG
 
 ## V1.0 RC 1 (Upcoming)
 
-* Upgraded the upstream version
-* Removed the cs fixers
+* Upgraded the upstream version to ~1.0
+
+
+## V0.4 Alpha (11/01/2015)
+
+* Upgraded the upstream version to 0.4.*
 * CS fixes
 * Moved to the MIT license
 
 
 ## V0.3 Alpha (25/11/2014)
 
+* Upgraded the upstream version to 0.3.*
 * Added support for guzzle 5
 * Removed the cs fixers
 
 
 ## V0.2 Alpha (30/10/2014)
 
+* Upgraded the upstream version to 0.2.*
 * Support both buzzle and buzz adapters
 
 
