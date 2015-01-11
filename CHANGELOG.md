@@ -4,7 +4,10 @@ CHANGE LOG
 
 ## V1.0 RC 1 (Upcoming)
 
-* TODO
+* Upgraded the upstream version
+* Removed the cs fixers
+* CS fixes
+* Moved to the MIT license
 
 
 ## V0.3 Alpha (25/11/2014)
