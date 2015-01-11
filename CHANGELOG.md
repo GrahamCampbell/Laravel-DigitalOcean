@@ -10,7 +10,6 @@ CHANGE LOG
 ## V0.4 Alpha (11/01/2015)
 
 * Upgraded the upstream version to 0.4.*
-* Removed the cs fixers
 * CS fixes
 * Moved to the MIT license
 
