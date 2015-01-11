@@ -7,7 +7,7 @@ CHANGE LOG
 * Upgraded the upstream version to ~1.0
 
 
-## V0.4 Alpha (Upcoming)
+## V0.4 Alpha (11/01/2015)
 
 * Upgraded the upstream version to 0.4.*
 * Removed the cs fixers
