@@ -47,9 +47,11 @@ Checkout the [1.0 branch](https://github.com/GrahamCampbell/Laravel-DigitalOcean
 
 ## Configuration
 
-Laravel DigitalOcean requires connection configuration.
+Laravel DigitalOcean requires connection configuration through [orchestral/config](https://github.com/orchestral/config).
 
-To get started, first publish the package config file:
+If you want an automated way to publish the config, then install [orchestral/publisher](https://github.com/orchestral/publisher).
+
+You can then publish the config file by running:
 
 ```bash
 $ php artisan publish:config graham-campbell/digitalocean

@@ -11,7 +11,7 @@
 
 namespace GrahamCampbell\DigitalOcean;
 
-use Illuminate\Support\ServiceProvider;
+use Orchestra\Support\Providers\ServiceProvider;
 
 /**
  * This is the digitalocean service provider class.
@@ -21,20 +21,13 @@ use Illuminate\Support\ServiceProvider;
 class DigitalOceanServiceProvider extends ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
-
-    /**
-     * Bootstrap the application events.
+     * Boot the service provider.
      *
      * @return void
      */
     public function boot()
     {
-        $this->package('graham-campbell/digitalocean', 'graham-campbell/digitalocean', __DIR__);
+        $this->addConfigComponent('graham-campbell/digitalocean', 'graham-campbell/digitalocean', realpath(__DIR__.'/../config'));
     }
 
     /**
