@@ -26,7 +26,8 @@
     },
     "suggest": {
         "kriswallsmith/buzz": "Enables the buzz connector.",
-        "guzzle/guzzle": "Enables the guzzle connector."
+        "guzzle/guzzle": "Enables the guzzle connector.",
+        "guzzlehttp/guzzle": "Enables the guzzle5 connector."
     },
     "autoload": {
         "psr-4": {
