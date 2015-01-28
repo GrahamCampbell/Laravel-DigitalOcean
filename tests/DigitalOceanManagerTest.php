@@ -29,7 +29,7 @@ class DigitalOceanManagerTest extends AbstractTestBenchTestCase
         $manager = $this->getManager($config);
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/digitalocean::default')->andReturn('main');
+            ->with('digitalocean.default')->andReturn('main');
 
         $this->assertSame([], $manager->getConnections());
 
@@ -48,7 +48,7 @@ class DigitalOceanManagerTest extends AbstractTestBenchTestCase
         $manager = new DigitalOceanManager($repo, $factory);
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/digitalocean::connections')->andReturn(['main' => $config]);
+            ->with('digitalocean.connections')->andReturn(['main' => $config]);
 
         $config['name'] = 'main';
 

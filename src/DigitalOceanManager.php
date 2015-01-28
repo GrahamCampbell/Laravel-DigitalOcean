@@ -72,7 +72,7 @@ class DigitalOceanManager extends AbstractManager
      */
     protected function getConfigName()
     {
-        return 'graham-campbell/digitalocean';
+        return 'digitalocean';
     }
 
     /**

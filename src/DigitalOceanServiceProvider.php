@@ -11,7 +11,8 @@
 
 namespace GrahamCampbell\DigitalOcean;
 
-use Orchestra\Support\Providers\ServiceProvider;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * This is the digitalocean service provider class.
@@ -27,7 +28,21 @@ class DigitalOceanServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->addConfigComponent('graham-campbell/digitalocean', 'graham-campbell/digitalocean', realpath(__DIR__.'/../config'));
+        $this->setupConfig();
+    }
+
+    /**
+     * Setup the config.
+     *
+     * @return void
+     */
+    protected function setupConfig()
+    {
+        $source = realpath(__DIR__.'/../config/digitalocean.php');
+
+        $this->publishes([$source => config_path('digitalocean.php')]);
+
+        $this->mergeConfigFrom('digitalocean', $source);
     }
 
     /**
@@ -37,41 +52,45 @@ class DigitalOceanServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerFactory();
-        $this->registerManager();
+        $this->registerFactory($this->app);
+        $this->registerManager($this->app);
     }
 
     /**
      * Register the factory class.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
-    protected function registerFactory()
+    protected function registerFactory(Application $app)
     {
-        $this->app->singleton('digitalocean.factory', function ($app) {
+        $app->singleton('digitalocean.factory', function ($app) {
             $adapter = new Adapters\ConnectionFactory();
 
             return new Factories\DigitalOceanFactory($adapter);
         });
 
-        $this->app->alias('digitalocean.factory', 'GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory');
+        $app->alias('digitalocean.factory', 'GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory');
     }
 
     /**
      * Register the manager class.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
-    protected function registerManager()
+    protected function registerManager(Application $app)
     {
-        $this->app->singleton('digitalocean', function ($app) {
+        $app->singleton('digitalocean', function ($app) {
             $config = $app['config'];
             $factory = $app['digitalocean.factory'];
 
             return new DigitalOceanManager($config, $factory);
         });
 
-        $this->app->alias('digitalocean', 'GrahamCampbell\DigitalOcean\DigitalOceanManager');
+        $app->alias('digitalocean', 'GrahamCampbell\DigitalOcean\DigitalOceanManager');
     }
 
     /**
