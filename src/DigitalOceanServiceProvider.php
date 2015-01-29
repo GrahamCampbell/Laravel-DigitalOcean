@@ -42,7 +42,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
 
         $this->publishes([$source => config_path('digitalocean.php')]);
 
-        $this->mergeConfigFrom('digitalocean', $source);
+        $this->mergeConfigFrom($source, 'digitalocean');
     }
 
     /**
