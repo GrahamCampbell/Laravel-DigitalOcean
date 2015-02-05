@@ -21,7 +21,7 @@ Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](http
 To get the latest version of Laravel DigitalOcean, simply add the following line to the require block of your `composer.json` file:
 
 ```
-"graham-campbell/digitalocean": "~2.0"
+"graham-campbell/digitalocean": "0.5.*"
 ```
 
 You will need to install at least one of the following dependencies for each driver:
@@ -39,10 +39,6 @@ Once Laravel DigitalOcean is installed, you need to register the service provide
 You can register the DigitalOcean facade in the `aliases` key of your `config/app.php` file if you like.
 
 * `'DigitalOcean' => 'GrahamCampbell\DigitalOcean\Facades\DigitalOcean'`
-
-#### Looking for a laravel 4 compatable version?
-
-Checkout the [1.0 branch](https://github.com/GrahamCampbell/Laravel-DigitalOcean/tree/1.0), installable by requiring `"graham-campbell/digitalocean": "~1.0"`.
 
 
 ## Configuration
