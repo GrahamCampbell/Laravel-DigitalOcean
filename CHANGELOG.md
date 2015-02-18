@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V0.5.1 Alpha (Upcoming)
+
+* Upgraded the upstream version to 0.5.*
+
+
 ## V0.5 Alpha (05/02/2015)
 
 * Upgraded to laravel 5.0
