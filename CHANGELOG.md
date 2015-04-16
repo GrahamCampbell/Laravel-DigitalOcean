@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.0 (Upcoming)
+
+* Upgraded the upstream version to ~1.0
+
+
 ## V0.5.1 Alpha (18/02/2015)
 
 * Upgraded the upstream version to 0.5.*
