@@ -14,7 +14,7 @@
         "illuminate/contracts": "5.0.*",
         "illuminate/support": "5.0.*",
         "graham-campbell/manager": "~2.0",
-        "toin0u/digitalocean-v2": "0.5.*"
+        "toin0u/digitalocean-v2": "~1.0"
     },
     "require-dev": {
         "graham-campbell/testbench": "~2.0",
