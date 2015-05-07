@@ -17,7 +17,7 @@
         "toin0u/digitalocean-v2": "~1.0"
     },
     "require-dev": {
-        "graham-campbell/testbench": "~2.0",
+        "graham-campbell/testbench": "~2.1",
         "kriswallsmith/buzz": "~0.10",
         "guzzle/guzzle": "~3.7",
         "guzzlehttp/guzzle" : "~5.0"
