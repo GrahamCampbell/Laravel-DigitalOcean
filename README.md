@@ -1,7 +1,7 @@
 Laravel DigitalOcean
 ====================
 
-Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a [DigitalOceanV2](https://github.com/toin0u/DigitalOceanV2) bridge for [Laravel 5](http://laravel.com). It utilises my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-DigitalOcean/releases), [license](LICENSE), [api docs](http://docs.gjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
+Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a [DigitalOceanV2](https://github.com/toin0u/DigitalOceanV2) bridge for [Laravel 5](http://laravel.com). It utilises my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-DigitalOcean/releases), [license](LICENSE), [api docs](https://docs.gjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
 
 ![Laravel DigitalOcean](https://cloud.githubusercontent.com/assets/2829600/4432303/c13e7608-468c-11e4-9427-65d32d2daa28.PNG)
 
@@ -156,7 +156,7 @@ For more information on how to use the `\DigitalOceanV2\DigitalOceanV2` class we
 
 There are other classes in this package that are not documented here. This is because they are not intended for public use and are used internally by this package.
 
-Feel free to check out the [API Documentation](http://docs.gjcampbell.co.uk) for Laravel DigitalOcean.
+Feel free to check out the [API Documentation](https://docs.gjcampbell.co.uk) for Laravel DigitalOcean.
 
 
 ## License
