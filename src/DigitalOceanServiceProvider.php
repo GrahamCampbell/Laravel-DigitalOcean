@@ -40,7 +40,9 @@ class DigitalOceanServiceProvider extends ServiceProvider
     {
         $source = realpath(__DIR__.'/../config/digitalocean.php');
 
-        $this->publishes([$source => config_path('digitalocean.php')]);
+        if (class_exists('Illuminate\Foundation\Application', false)) {
+            $this->publishes([$source => config_path('digitalocean.php')]);
+        }
 
         $this->mergeConfigFrom($source, 'digitalocean');
     }
