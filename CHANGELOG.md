@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.2 (Upcoming)
+
+* Lumen support
+
+
 ## V1.1 (07/05/2015)
 
 * Support both laravel 5.0 and 5.1
