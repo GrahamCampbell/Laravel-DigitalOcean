@@ -17,10 +17,12 @@
         "toin0u/digitalocean-v2": "~1.0"
     },
     "require-dev": {
-        "graham-campbell/testbench": "~2.1",
-        "kriswallsmith/buzz": "~0.10",
+        "graham-campbell/testbench": "~3.0",
         "guzzle/guzzle": "~3.7",
-        "guzzlehttp/guzzle" : "~5.0"
+        "guzzlehttp/guzzle" : "~5.0",
+        "kriswallsmith/buzz": "~0.10",
+        "mockery/mockery": "^0.9.4",
+        "phpunit/phpunit": "^4.7.6"
     },
     "suggest": {
         "kriswallsmith/buzz": "Enables the buzz connector.",

@@ -11,6 +11,7 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean\Adapters;
 
+use DigitalOceanV2\Adapter\Guzzle5Adapter;
 use GrahamCampbell\DigitalOcean\Adapters\Guzzle5Connector;
 use GrahamCampbell\TestBench\AbstractTestCase;
 
@@ -27,7 +28,7 @@ class Guzzle5ConnectorTest extends AbstractTestCase
 
         $return = $connector->connect(['token' => 'your-token']);
 
-        $this->assertInstanceOf('DigitalOceanV2\Adapter\Guzzle5Adapter', $return);
+        $this->assertInstanceOf(Guzzle5Adapter::class, $return);
     }
 
     /**

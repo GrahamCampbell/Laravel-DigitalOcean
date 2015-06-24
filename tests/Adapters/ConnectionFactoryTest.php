@@ -11,7 +11,13 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean\Adapters;
 
+use DigitalOceanV2\Adapter\AdapterInterface;
+use DigitalOceanV2\Adapter\BuzzAdapter;
+use GrahamCampbell\DigitalOcean\Adapters\BuzzConnector;
 use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory;
+use GrahamCampbell\DigitalOcean\Adapters\Guzzle5Connector;
+use GrahamCampbell\DigitalOcean\Adapters\GuzzleConnector;
+use GrahamCampbell\DigitalOcean\Adapters\LocalConnector;
 use GrahamCampbell\TestBench\AbstractTestCase;
 use Mockery;
 
@@ -28,15 +34,15 @@ class ConnectionFactoryTest extends AbstractTestCase
 
         $return = $factory->make(['driver' => 'buzz', 'token' => 'your-token', 'name' => 'main']);
 
-        $this->assertInstanceOf('DigitalOceanV2\Adapter\AdapterInterface', $return);
+        $this->assertInstanceOf(AdapterInterface::class, $return);
     }
 
     public function createDataProvider()
     {
         return [
-            ['buzz', 'BuzzConnector'],
-            ['guzzle', 'GuzzleConnector'],
-            ['guzzle5', 'Guzzle5Connector'],
+            ['buzz', BuzzConnector::class],
+            ['guzzle', GuzzleConnector::class],
+            ['guzzle5', Guzzle5Connector::class],
         ];
     }
 
@@ -49,7 +55,7 @@ class ConnectionFactoryTest extends AbstractTestCase
 
         $return = $factory->createConnector(['driver' => $driver]);
 
-        $this->assertInstanceOf('GrahamCampbell\DigitalOcean\Adapters\\'.$class, $return);
+        $this->assertInstanceOf($class, $return);
     }
 
     /**
@@ -79,13 +85,13 @@ class ConnectionFactoryTest extends AbstractTestCase
 
     protected function getMockedFactory()
     {
-        $mock = Mockery::mock('GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory[createConnector]');
+        $mock = Mockery::mock(ConnectionFactory::class.'[createConnector]');
 
-        $connector = Mockery::mock('GrahamCampbell\DigitalOcean\Adapters\LocalConnector');
+        $connector = Mockery::mock(LocalConnector::class);
 
         $connector->shouldReceive('connect')->once()
             ->with(['name' => 'main', 'driver' => 'buzz', 'token' => 'your-token'])
-            ->andReturn(Mockery::mock('DigitalOceanV2\Adapter\BuzzAdapter'));
+            ->andReturn(Mockery::mock(BuzzAdapter::class));
 
         $mock->shouldReceive('createConnector')->once()
             ->with(['name' => 'main', 'driver' => 'buzz', 'token' => 'your-token'])

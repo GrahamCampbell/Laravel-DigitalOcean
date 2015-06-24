@@ -11,8 +11,11 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean;
 
+use DigitalOceanV2\DigitalOceanV2;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
+use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
+use Illuminate\Contracts\Config\Repository;
 use Mockery;
 
 /**
@@ -35,15 +38,15 @@ class DigitalOceanManagerTest extends AbstractTestBenchTestCase
 
         $return = $manager->connection();
 
-        $this->assertInstanceOf('DigitalOceanV2\DigitalOceanV2', $return);
+        $this->assertInstanceOf(DigitalOceanV2::class, $return);
 
         $this->assertArrayHasKey('main', $manager->getConnections());
     }
 
     protected function getManager(array $config)
     {
-        $repo = Mockery::mock('Illuminate\Contracts\Config\Repository');
-        $factory = Mockery::mock('GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory');
+        $repo = Mockery::mock(Repository::class);
+        $factory = Mockery::mock(DigitalOceanFactory::class);
 
         $manager = new DigitalOceanManager($repo, $factory);
 
@@ -53,7 +56,7 @@ class DigitalOceanManagerTest extends AbstractTestBenchTestCase
         $config['name'] = 'main';
 
         $manager->getFactory()->shouldReceive('make')->once()
-            ->with($config)->andReturn(Mockery::mock('DigitalOceanV2\DigitalOceanV2'));
+            ->with($config)->andReturn(Mockery::mock(DigitalOceanV2::class));
 
         return $manager;
     }

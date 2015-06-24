@@ -11,7 +11,10 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean;
 
-use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
+use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;
+use GrahamCampbell\DigitalOcean\DigitalOceanManager;
+use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
+use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 
 /**
  * This is the service provider test class.
@@ -20,15 +23,20 @@ use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
  */
 class ServiceProviderTest extends AbstractTestCase
 {
-    use ServiceProviderTestCaseTrait;
+    use ServiceProviderTrait;
+
+    public function testAdapterFactoryIsInjectable()
+    {
+        $this->assertIsInjectable(AdapterFactory::class);
+    }
 
     public function testDigitalOceanFactoryIsInjectable()
     {
-        $this->assertIsInjectable('GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory');
+        $this->assertIsInjectable(DigitalOceanFactory::class);
     }
 
     public function testDigitalOceanManagerIsInjectable()
     {
-        $this->assertIsInjectable('GrahamCampbell\DigitalOcean\DigitalOceanManager');
+        $this->assertIsInjectable(DigitalOceanManager::class);
     }
 }

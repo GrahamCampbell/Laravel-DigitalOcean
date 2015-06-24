@@ -11,7 +11,9 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean\Facades;
 
-use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
+use GrahamCampbell\DigitalOcean\DigitalOceanManager;
+use GrahamCampbell\DigitalOcean\Facades\DigitalOcean;
+use GrahamCampbell\TestBenchCore\FacadeTrait;
 use GrahamCampbell\Tests\DigitalOcean\AbstractTestCase;
 
 /**
@@ -21,7 +23,7 @@ use GrahamCampbell\Tests\DigitalOcean\AbstractTestCase;
  */
 class DigitalOceanTest extends AbstractTestCase
 {
-    use FacadeTestCaseTrait;
+    use FacadeTrait;
 
     /**
      * Get the facade accessor.
@@ -40,7 +42,7 @@ class DigitalOceanTest extends AbstractTestCase
      */
     protected function getFacadeClass()
     {
-        return 'GrahamCampbell\DigitalOcean\Facades\DigitalOcean';
+        return DigitalOcean::class;
     }
 
     /**
@@ -50,6 +52,6 @@ class DigitalOceanTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\DigitalOcean\DigitalOceanManager';
+        return DigitalOceanManager::class;
     }
 }

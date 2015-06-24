@@ -11,6 +11,7 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean\Adapters;
 
+use DigitalOceanV2\Adapter\BuzzAdapter;
 use GrahamCampbell\DigitalOcean\Adapters\BuzzConnector;
 use GrahamCampbell\TestBench\AbstractTestCase;
 
@@ -27,7 +28,7 @@ class BuzzConnectorTest extends AbstractTestCase
 
         $return = $connector->connect(['token' => 'your-token']);
 
-        $this->assertInstanceOf('DigitalOceanV2\Adapter\BuzzAdapter', $return);
+        $this->assertInstanceOf(BuzzAdapter::class, $return);
     }
 
     /**
