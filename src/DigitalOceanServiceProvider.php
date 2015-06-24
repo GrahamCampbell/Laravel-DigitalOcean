@@ -11,6 +11,8 @@
 
 namespace GrahamCampbell\DigitalOcean;
 
+use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;
+use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
@@ -54,26 +56,43 @@ class DigitalOceanServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerFactory($this->app);
+        $this->registerAdapterFactory($this->app);
+        $this->registerDigitalOceanFactory($this->app);
         $this->registerManager($this->app);
     }
 
     /**
-     * Register the factory class.
+     * Register the adapter factory class.
      *
      * @param \Illuminate\Contracts\Foundation\Application $app
      *
      * @return void
      */
-    protected function registerFactory(Application $app)
+    protected function registerAdapterFactory(Application $app)
     {
-        $app->singleton('digitalocean.factory', function ($app) {
-            $adapter = new Adapters\ConnectionFactory();
-
-            return new Factories\DigitalOceanFactory($adapter);
+        $app->singleton('digitalocean.adapterfactory', function ($app) {
+            return new AdapterFactory();
         });
 
-        $app->alias('digitalocean.factory', 'GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory');
+        $app->alias('digitalocean.adapterfactory', AdapterFactory::class);
+    }
+
+    /**
+     * Register the digitalocean factory class.
+     *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
+     * @return void
+     */
+    protected function registerDigitalOceanFactory(Application $app)
+    {
+        $app->singleton('digitalocean.factory', function ($app) {
+            $adapter = $app['digitalocean.adapterfactory'];
+
+            return new DigitalOceanFactory($adapter);
+        });
+
+        $app->alias('digitalocean.factory', DigitalOceanFactory::class);
     }
 
     /**
@@ -92,7 +111,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
             return new DigitalOceanManager($config, $factory);
         });
 
-        $app->alias('digitalocean', 'GrahamCampbell\DigitalOcean\DigitalOceanManager');
+        $app->alias('digitalocean', DigitalOceanManager::class);
     }
 
     /**
@@ -103,8 +122,9 @@ class DigitalOceanServiceProvider extends ServiceProvider
     public function provides()
     {
         return [
-            'digitalocean',
+            'digitalocean.adapterfactory',
             'digitalocean.factory',
+            'digitalocean',
         ];
     }
 }
