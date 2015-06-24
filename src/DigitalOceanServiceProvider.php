@@ -12,7 +12,6 @@
 namespace GrahamCampbell\DigitalOcean;
 
 use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;
-use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 

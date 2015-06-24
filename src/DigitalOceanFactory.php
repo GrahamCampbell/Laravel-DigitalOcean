@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\DigitalOcean\Factories;
+namespace GrahamCampbell\DigitalOcean;
 
 use DigitalOceanV2\DigitalOceanV2;
 use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;

@@ -12,8 +12,8 @@
 namespace GrahamCampbell\Tests\DigitalOcean;
 
 use DigitalOceanV2\DigitalOceanV2;
+use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
-use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
 use Illuminate\Contracts\Config\Repository;
 use Mockery;

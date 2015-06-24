@@ -11,7 +11,6 @@
 
 namespace GrahamCampbell\DigitalOcean;
 
-use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
 use GrahamCampbell\Manager\AbstractManager;
 use Illuminate\Contracts\Config\Repository;
 
@@ -35,15 +34,15 @@ class DigitalOceanManager extends AbstractManager
     /**
      * The factory instance.
      *
-     * @var \GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory
+     * @var \GrahamCampbell\DigitalOcean\DigitalOceanFactory
      */
     protected $factory;
 
     /**
      * Create a new digitalocean manager instance.
      *
-     * @param \Illuminate\Contracts\Config\Repository                    $config
-     * @param \GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory $factory
+     * @param \Illuminate\Contracts\Config\Repository          $config
+     * @param \GrahamCampbell\DigitalOcean\DigitalOceanFactory $factory
      *
      * @return void
      */
@@ -78,7 +77,7 @@ class DigitalOceanManager extends AbstractManager
     /**
      * Get the factory instance.
      *
-     * @return \GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory
+     * @return \GrahamCampbell\DigitalOcean\DigitalOceanFactory
      */
     public function getFactory()
     {

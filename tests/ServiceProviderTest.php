@@ -12,8 +12,8 @@
 namespace GrahamCampbell\Tests\DigitalOcean;
 
 use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;
+use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
-use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 
 /**

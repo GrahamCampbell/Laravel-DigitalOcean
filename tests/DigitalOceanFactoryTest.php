@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\Tests\DigitalOcean\Factories;
+namespace GrahamCampbell\Tests\DigitalOcean;
 
 use DigitalOceanV2\Adapter\AdapterInterface;
 use DigitalOceanV2\DigitalOceanV2;
 use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory;
+use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
-use GrahamCampbell\DigitalOcean\Factories\DigitalOceanFactory;
-use GrahamCampbell\Tests\DigitalOcean\AbstractTestCase;
+use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
 use Mockery;
 
 /**
@@ -24,7 +24,7 @@ use Mockery;
  *
  * @author Graham Campbell <graham@cachethq.io>
  */
-class DigitalOceanFactoryTest extends AbstractTestCase
+class DigitalOceanFactoryTest extends AbstractTestBenchTestCase
 {
     public function testMake()
     {
