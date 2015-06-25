@@ -12,8 +12,8 @@
 namespace GrahamCampbell\DigitalOcean\Adapters;
 
 use DigitalOceanV2\Adapter\Guzzle5Adapter;
-use InvalidArgumentException;
 use GrahamCampbell\Manager\ConnectorInterface;
+use InvalidArgumentException;
 
 /**
  * This is the guzzle5 connector class.
