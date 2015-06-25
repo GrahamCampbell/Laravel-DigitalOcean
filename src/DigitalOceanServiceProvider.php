@@ -11,6 +11,7 @@
 
 namespace GrahamCampbell\DigitalOcean;
 
+use DigitalOceanV2\DigitalOceanV2;
 use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
@@ -58,6 +59,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
         $this->registerAdapterFactory($this->app);
         $this->registerDigitalOceanFactory($this->app);
         $this->registerManager($this->app);
+        $this->registerBindings($this->app);
     }
 
     /**
@@ -114,6 +116,24 @@ class DigitalOceanServiceProvider extends ServiceProvider
     }
 
     /**
+     * Register the bindings.
+     *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
+     * @return void
+     */
+    protected function registerBindings(Application $app)
+    {
+        $app->bind('digitalocean.connection', function ($app) {
+            $manager = $app['digitalocean'];
+
+            return $manager->connection();
+        });
+
+        $app->alias('digitalocean.connection', DigitalOceanV2::class);
+    }
+
+    /**
      * Get the services provided by the provider.
      *
      * @return string[]
@@ -124,6 +144,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
             'digitalocean.adapterfactory',
             'digitalocean.factory',
             'digitalocean',
+            'digitalocean.connection',
         ];
     }
 }

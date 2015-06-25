@@ -11,6 +11,7 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean;
 
+use DigitalOceanV2\DigitalOceanV2;
 use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
@@ -38,5 +39,17 @@ class ServiceProviderTest extends AbstractTestCase
     public function testDigitalOceanManagerIsInjectable()
     {
         $this->assertIsInjectable(DigitalOceanManager::class);
+    }
+
+    public function testBindings()
+    {
+        $this->assertIsInjectable(DigitalOceanV2::class);
+
+        $original = $this->app['digitalocean.connection'];
+        $this->app['digitalocean']->reconnect();
+        $new = $this->app['digitalocean.connection'];
+
+        $this->assertNotSame($original, $new);
+        $this->assertEquals($original, $new);
     }
 }

@@ -7,6 +7,7 @@ CHANGE LOG
 * Official lumen support
 * Code cleanup
 * Moved the factory
+* Container binding improvements
 
 
 ## V1.1 (07/05/2015)
