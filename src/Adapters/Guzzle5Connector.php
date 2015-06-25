@@ -12,6 +12,7 @@
 namespace GrahamCampbell\DigitalOcean\Adapters;
 
 use DigitalOceanV2\Adapter\Guzzle5Adapter;
+use InvalidArgumentException;
 use GrahamCampbell\Manager\ConnectorInterface;
 
 /**
@@ -47,7 +48,7 @@ class Guzzle5Connector implements ConnectorInterface
     protected function getConfig(array $config)
     {
         if (!array_key_exists('token', $config)) {
-            throw new \InvalidArgumentException('The guzzle5 connector requires configuration.');
+            throw new InvalidArgumentException('The guzzle5 connector requires configuration.');
         }
 
         return array_only($config, ['token']);

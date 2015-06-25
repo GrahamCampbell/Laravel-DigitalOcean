@@ -11,6 +11,8 @@
 
 namespace GrahamCampbell\DigitalOcean\Adapters;
 
+use InvalidArgumentException;
+
 /**
  * This is the adapter connection factory class.
  *
@@ -42,7 +44,7 @@ class ConnectionFactory
     public function createConnector(array $config)
     {
         if (!isset($config['driver'])) {
-            throw new \InvalidArgumentException('A driver must be specified.');
+            throw new InvalidArgumentException('A driver must be specified.');
         }
 
         switch ($config['driver']) {
@@ -54,6 +56,6 @@ class ConnectionFactory
                 return new Guzzle5Connector();
         }
 
-        throw new \InvalidArgumentException("Unsupported driver [{$config['driver']}]");
+        throw new InvalidArgumentException("Unsupported driver [{$config['driver']}].");
     }
 }
