@@ -33,6 +33,7 @@ class Guzzle5ConnectorTest extends AbstractTestCase
 
     /**
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage The guzzle5 connector requires configuration.
      */
     public function testConnectWithoutTokent()
     {

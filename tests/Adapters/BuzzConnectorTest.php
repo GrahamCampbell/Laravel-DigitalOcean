@@ -33,6 +33,7 @@ class BuzzConnectorTest extends AbstractTestCase
 
     /**
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage The buzz connector requires configuration.
      */
     public function testConnectWithoutToken()
     {
