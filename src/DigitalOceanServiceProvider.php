@@ -44,6 +44,8 @@ class DigitalOceanServiceProvider extends ServiceProvider
 
         if (class_exists('Illuminate\Foundation\Application', false)) {
             $this->publishes([$source => config_path('digitalocean.php')]);
+        } elseif (class_exists('Laravel\Lumen\Application', false)) {
+            $this->configure('digitalocean');
         }
 
         $this->mergeConfigFrom($source, 'digitalocean');
