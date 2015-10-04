@@ -22,7 +22,7 @@
         "guzzlehttp/guzzle" : "~5.0",
         "kriswallsmith/buzz": "~0.10",
         "mockery/mockery": "^0.9.4",
-        "phpunit/phpunit": "^4.7.6"
+        "phpunit/phpunit": "~4.8|~5.0"
     },
     "suggest": {
         "kriswallsmith/buzz": "Enables the buzz connector.",
