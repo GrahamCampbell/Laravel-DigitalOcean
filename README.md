@@ -16,21 +16,29 @@ Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](http
 
 ## Installation
 
-[PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+, and [Composer](https://getcomposer.org) are required.
+Either [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+ are required.
 
-To get the latest version of Laravel DigitalOcean, simply add the following line to the require block of your `composer.json` file:
+To get the latest version of Laravel DigitalOcean, simply require the project using [Composer](https://getcomposer.org):
 
+```bash
+$ composer require graham-campbell/digitalocean
 ```
-"graham-campbell/digitalocean": "~2.1"
+
+Instead, you may of course manually update your require block and run `composer update` if you so choose:
+
+```json
+{
+    "require": {
+        "graham-campbell/digitalocean": "^2.0"
+    }
+}
 ```
 
-You will need to install at least one of the following dependencies for each driver:
+You will also need to install at least one of the following dependencies for each driver:
 
 * The buzz connector requires `"kriswallsmith/buzz": "~0.10"` in your `composer.json`.
 * The guzzle connector requires `"guzzle/guzzle": "~3.7"` in your `composer.json`.
 * The guzzle 5 connector requires `"guzzlehttp/guzzle": "~5.0"` in your `composer.json`.
-
-You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 Once Laravel DigitalOcean is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
