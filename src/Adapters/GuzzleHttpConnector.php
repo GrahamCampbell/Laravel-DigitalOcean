@@ -11,23 +11,23 @@
 
 namespace GrahamCampbell\DigitalOcean\Adapters;
 
-use DigitalOceanV2\Adapter\Guzzle5Adapter;
+use DigitalOceanV2\Adapter\GuzzleHttpAdapter;
 use GrahamCampbell\Manager\ConnectorInterface;
 use InvalidArgumentException;
 
 /**
- * This is the guzzle5 connector class.
+ * This is the guzzlehttp connector class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class Guzzle5Connector implements ConnectorInterface
+class GuzzleHttpConnector implements ConnectorInterface
 {
     /**
      * Establish an adapter connection.
      *
      * @param string[] $config
      *
-     * @return \DigitalOceanV2\Adapter\Guzzle5Adapter
+     * @return \DigitalOceanV2\Adapter\GuzzleHttpAdapter
      */
     public function connect(array $config)
     {
@@ -48,21 +48,21 @@ class Guzzle5Connector implements ConnectorInterface
     protected function getConfig(array $config)
     {
         if (!array_key_exists('token', $config)) {
-            throw new InvalidArgumentException('The guzzle5 connector requires configuration.');
+            throw new InvalidArgumentException('The guzzlehttp connector requires configuration.');
         }
 
         return array_only($config, ['token']);
     }
 
     /**
-     * Get the guzzle5 adapter.
+     * Get the guzzlehttp adapter.
      *
      * @param string[] $config
      *
-     * @return \DigitalOceanV2\Adapter\Guzzle5Adapter
+     * @return \DigitalOceanV2\Adapter\GuzzleHttpAdapter
      */
     protected function getAdapter(array $config)
     {
-        return new Guzzle5Adapter($config['token']);
+        return new GuzzleHttpAdapter($config['token']);
     }
 }

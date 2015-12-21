@@ -32,14 +32,14 @@ return [
     | Here are each of the connections setup for your application. Example
     | configuration has been included, but you may add as many connections as
     | you would like. Both guzzle and buzz drivers are supported, with "guzzle"
-    | being guzzle 3, and "guzzle5" being guzzle 5.
+    | being guzzle 3, and "guzzlehttp" being guzzle 5 or 6.
     |
     */
 
     'connections' => [
 
         'main' => [
-            'driver'  => 'guzzle5',
+            'driver'  => 'guzzlehttp',
             'token'   => 'your-token',
         ],
 

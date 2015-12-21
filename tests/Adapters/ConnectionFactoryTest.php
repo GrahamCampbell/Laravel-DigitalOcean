@@ -15,7 +15,7 @@ use DigitalOceanV2\Adapter\AdapterInterface;
 use DigitalOceanV2\Adapter\BuzzAdapter;
 use GrahamCampbell\DigitalOcean\Adapters\BuzzConnector;
 use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory;
-use GrahamCampbell\DigitalOcean\Adapters\Guzzle5Connector;
+use GrahamCampbell\DigitalOcean\Adapters\GuzzleHttpConnector;
 use GrahamCampbell\DigitalOcean\Adapters\GuzzleConnector;
 use GrahamCampbell\DigitalOcean\Adapters\LocalConnector;
 use GrahamCampbell\TestBench\AbstractTestCase;
@@ -42,7 +42,7 @@ class ConnectionFactoryTest extends AbstractTestCase
         return [
             ['buzz', BuzzConnector::class],
             ['guzzle', GuzzleConnector::class],
-            ['guzzle5', Guzzle5Connector::class],
+            ['guzzlehttp', GuzzleHttpConnector::class],
         ];
     }
 

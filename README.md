@@ -29,7 +29,7 @@ Instead, you may of course manually update your require block and run `composer 
 ```json
 {
     "require": {
-        "graham-campbell/digitalocean": "^2.0"
+        "graham-campbell/digitalocean": "^3.0"
     }
 }
 ```
@@ -38,7 +38,7 @@ You will also need to install at least one of the following dependencies for eac
 
 * The buzz connector requires `"kriswallsmith/buzz": "~0.10"` in your `composer.json`.
 * The guzzle connector requires `"guzzle/guzzle": "~3.7"` in your `composer.json`.
-* The guzzle 5 connector requires `"guzzlehttp/guzzle": "~5.0"` in your `composer.json`.
+* The guzzlehttp connector requires `"guzzlehttp/guzzle": "~5.0|~6.0"` in your `composer.json`.
 
 Once Laravel DigitalOcean is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 

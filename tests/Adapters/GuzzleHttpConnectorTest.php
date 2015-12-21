@@ -11,39 +11,39 @@
 
 namespace GrahamCampbell\Tests\DigitalOcean\Adapters;
 
-use DigitalOceanV2\Adapter\Guzzle5Adapter;
-use GrahamCampbell\DigitalOcean\Adapters\Guzzle5Connector;
+use DigitalOceanV2\Adapter\GuzzleHttpAdapter;
+use GrahamCampbell\DigitalOcean\Adapters\GuzzleHttpConnector;
 use GrahamCampbell\TestBench\AbstractTestCase;
 
 /**
- * This is the guzzle5 connector test class.
+ * This is the guzzlehttp connector test class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class Guzzle5ConnectorTest extends AbstractTestCase
+class GuzzleHttpConnectorTest extends AbstractTestCase
 {
     public function testConnectStandard()
     {
-        $connector = $this->getGuzzle5Connector();
+        $connector = $this->getGuzzleHttpConnector();
 
         $return = $connector->connect(['token' => 'your-token']);
 
-        $this->assertInstanceOf(Guzzle5Adapter::class, $return);
+        $this->assertInstanceOf(GuzzleHttpAdapter::class, $return);
     }
 
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The guzzle5 connector requires configuration.
+     * @expectedExceptionMessage The guzzlehttp connector requires configuration.
      */
     public function testConnectWithoutTokent()
     {
-        $connector = $this->getGuzzle5Connector();
+        $connector = $this->getGuzzleHttpConnector();
 
         $connector->connect([]);
     }
 
-    protected function getGuzzle5Connector()
+    protected function getGuzzleHttpConnector()
     {
-        return new Guzzle5Connector();
+        return new GuzzleHttpConnector();
     }
 }

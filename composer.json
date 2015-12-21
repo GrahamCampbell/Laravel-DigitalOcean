@@ -14,12 +14,12 @@
         "illuminate/contracts": "5.1.*|5.2.*",
         "illuminate/support": "5.1.*|5.2.*",
         "graham-campbell/manager": "^2.3",
-        "toin0u/digitalocean-v2": "^1.0"
+        "toin0u/digitalocean-v2": "^2.0"
     },
     "require-dev": {
         "graham-campbell/testbench": "^3.1",
         "guzzle/guzzle": "^3.7",
-        "guzzlehttp/guzzle" : "^5.0",
+        "guzzlehttp/guzzle" : "^5.0|^6.0",
         "kriswallsmith/buzz": "^0.10",
         "mockery/mockery": "^0.9.4",
         "phpunit/phpunit": "^4.8|^5.0"
@@ -27,7 +27,7 @@
     "suggest": {
         "kriswallsmith/buzz": "Enables the buzz connector.",
         "guzzle/guzzle": "Enables the guzzle connector.",
-        "guzzlehttp/guzzle": "Enables the guzzle5 connector."
+        "guzzlehttp/guzzle": "Enables the guzzlehttp connector."
     },
     "autoload": {
         "psr-4": {
@@ -44,7 +44,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.2-dev"
+            "dev-master": "3.0-dev"
         }
     },
     "minimum-stability": "dev",
