@@ -43,7 +43,7 @@ class DigitalOceanFactoryTest extends AbstractTestBenchTestCase
     {
         $factory = $this->getDigitalOceanFactory();
 
-        $config = ['driver' => 'guzzle5', 'token'  => 'your-token'];
+        $config = ['driver' => 'guzzlehttp', 'token'  => 'your-token'];
 
         $factory->getAdapter()->shouldReceive('make')->once()
             ->with($config)->andReturn(Mockery::mock(AdapterInterface::class));

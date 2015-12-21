@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.0 (Upcoming)
+
+* Support guzzle 6
+
+
 ## V2.2 (14/11/2015)
 
 * Added laravel 5.2 support
