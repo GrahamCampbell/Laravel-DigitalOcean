@@ -4,7 +4,9 @@ CHANGE LOG
 
 ## V3.0 (Upcoming)
 
-* Support guzzle 6
+* Renamed the guzzle 5 connector
+* Support guzzle 6 as well as 5
+* Upgraded the upstream version to ^2.0
 
 
 ## V2.2 (14/11/2015)
