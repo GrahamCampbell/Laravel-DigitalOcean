@@ -32,24 +32,22 @@ class DigitalOceanServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->setupConfig($this->app);
+        $this->setupConfig();
     }
 
     /**
      * Setup the config.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function setupConfig(Application $app)
+    protected function setupConfig()
     {
         $source = realpath(__DIR__.'/../config/digitalocean.php');
 
-        if ($app instanceof LaravelApplication && $app->runningInConsole()) {
+        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
             $this->publishes([$source => config_path('digitalocean.php')]);
-        } elseif ($app instanceof LumenApplication) {
-            $app->configure('digitalocean');
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('digitalocean');
         }
 
         $this->mergeConfigFrom($source, 'digitalocean');
