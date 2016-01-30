@@ -13,7 +13,7 @@ namespace GrahamCampbell\DigitalOcean;
 
 use DigitalOceanV2\DigitalOceanV2;
 use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
@@ -60,81 +60,73 @@ class DigitalOceanServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerAdapterFactory($this->app);
-        $this->registerDigitalOceanFactory($this->app);
-        $this->registerManager($this->app);
-        $this->registerBindings($this->app);
+        $this->registerAdapterFactory();
+        $this->registerDigitalOceanFactory();
+        $this->registerManager();
+        $this->registerBindings();
     }
 
     /**
      * Register the adapter factory class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerAdapterFactory(Application $app)
+    protected function registerAdapterFactory()
     {
-        $app->singleton('digitalocean.adapterfactory', function ($app) {
+        $this->app->singleton('digitalocean.adapterfactory', function () {
             return new AdapterFactory();
         });
 
-        $app->alias('digitalocean.adapterfactory', AdapterFactory::class);
+        $this->app->alias('digitalocean.adapterfactory', AdapterFactory::class);
     }
 
     /**
      * Register the digitalocean factory class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerDigitalOceanFactory(Application $app)
+    protected function registerDigitalOceanFactory()
     {
-        $app->singleton('digitalocean.factory', function ($app) {
+        $this->app->singleton('digitalocean.factory', function (Container $app) {
             $adapter = $app['digitalocean.adapterfactory'];
 
             return new DigitalOceanFactory($adapter);
         });
 
-        $app->alias('digitalocean.factory', DigitalOceanFactory::class);
+        $this->app->alias('digitalocean.factory', DigitalOceanFactory::class);
     }
 
     /**
      * Register the manager class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerManager(Application $app)
+    protected function registerManager()
     {
-        $app->singleton('digitalocean', function ($app) {
+        $this->app->singleton('digitalocean', function (Container $app) {
             $config = $app['config'];
             $factory = $app['digitalocean.factory'];
 
             return new DigitalOceanManager($config, $factory);
         });
 
-        $app->alias('digitalocean', DigitalOceanManager::class);
+        $this->app->alias('digitalocean', DigitalOceanManager::class);
     }
 
     /**
      * Register the bindings.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerBindings(Application $app)
+    protected function registerBindings()
     {
-        $app->bind('digitalocean.connection', function ($app) {
+        $this->app->bind('digitalocean.connection', function (Container $app) {
             $manager = $app['digitalocean'];
 
             return $manager->connection();
         });
 
-        $app->alias('digitalocean.connection', DigitalOceanV2::class);
+        $this->app->alias('digitalocean.connection', DigitalOceanV2::class);
     }
 
     /**
