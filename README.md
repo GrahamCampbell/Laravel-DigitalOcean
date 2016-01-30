@@ -6,6 +6,7 @@ Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](http
 ![Laravel DigitalOcean](https://cloud.githubusercontent.com/assets/2829600/4432303/c13e7608-468c-11e4-9427-65d32d2daa28.PNG)
 
 <p align="center">
+<a href="https://styleci.io/repos/22224545"><img src="https://styleci.io/repos/22224545/shield" alt="StyleCI Status"></img></a>
 <a href="https://travis-ci.org/GrahamCampbell/Laravel-DigitalOcean"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-DigitalOcean/master.svg?style=flat-square" alt="Build Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-DigitalOcean/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-DigitalOcean.svg?style=flat-square" alt="Coverage Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-DigitalOcean"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-DigitalOcean.svg?style=flat-square" alt="Quality Score"></img></a>
