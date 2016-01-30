@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V3.0.1 (30/01/2016)
+
+* Improved service provider
+* Fixed some typos
+
+
 ## V3.0 (21/12/2015)
 
 * Renamed the guzzle 5 connector
