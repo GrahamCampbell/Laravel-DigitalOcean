@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.1 (Upcoming)
+
+* Added laravel 5.3 support
+
+
 ## V3.0.1 (30/01/2016)
 
 * Improved service provider
