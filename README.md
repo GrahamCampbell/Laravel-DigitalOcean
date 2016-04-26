@@ -37,9 +37,9 @@ Instead, you may of course manually update your require block and run `composer 
 
 You will also need to install at least one of the following dependencies for each driver:
 
-* The buzz connector requires `"kriswallsmith/buzz": "~0.10"` in your `composer.json`.
-* The guzzle connector requires `"guzzle/guzzle": "~3.7"` in your `composer.json`.
-* The guzzlehttp connector requires `"guzzlehttp/guzzle": "~5.0|~6.0"` in your `composer.json`.
+* The buzz connector requires `"kriswallsmith/buzz": "^0.15"` in your `composer.json`.
+* The guzzle connector requires `"guzzle/guzzle": "^3.7"` in your `composer.json`.
+* The guzzlehttp connector requires `"guzzlehttp/guzzle": "^5.0"` or `"guzzlehttp/guzzle": "^6.0"` in your `composer.json`.
 
 Once Laravel DigitalOcean is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
