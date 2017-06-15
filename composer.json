@@ -45,6 +45,14 @@
     "extra": {
         "branch-alias": {
             "dev-master": "3.2-dev"
+        },
+        "laravel": {
+            "providers": [
+                "GrahamCampbell\\DigitalOcean\\DigitalOceanServiceProvider"
+            ],
+            "aliases": {
+                "DigitalOcean": "GrahamCampbell\\DigitalOcean\\Facades\\DigitalOcean"
+            }
         }
     },
     "minimum-stability": "dev",
