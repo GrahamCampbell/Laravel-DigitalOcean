@@ -17,37 +17,26 @@ Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](http
 
 ## Installation
 
-Either [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+ are required.
+Laravel DigitalOcean requires [PHP](https://php.net) 5.5+. This particular version supports Laravel 5.1, 5.2, 5.3, or 5.4 only.
 
-To get the latest version of Laravel DigitalOcean, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version, simply require the project using [Composer](https://getcomposer.org). 
+You will need to install at least one of the following dependencies for each driver:
+
+* The buzz connector requires `kriswallsmith/buzz` (`^0.15`).
+* The guzzle connector requires `guzzle/guzzle` (`^3.7"`).
+* The guzzlehttp connector requires `guzzlehttp/guzzle` (`^5.0"` or `^6.0`).
+
+So, for example, if using the guzzlehttp driver:
 
 ```bash
-$ composer require graham-campbell/digitalocean
+$ composer require graham-campbell/digitalocean guzzlehttp/guzzle
 ```
 
-Instead, you may of course manually update your require block and run `composer update` if you so choose:
+Once installed, you need to register the `GrahamCampbell\DigitalOcean\DigitalOceanServiceProvider` service provider in your `config/app.php`, and optionally alias our facade:
 
-```json
-{
-    "require": {
-        "graham-campbell/digitalocean": "^3.0"
-    }
-}
+```php
+        'DigitalOcean' => GrahamCampbell\DigitalOcean\Facades\DigitalOcean::class,
 ```
-
-You will also need to install at least one of the following dependencies for each driver:
-
-* The buzz connector requires `"kriswallsmith/buzz": "^0.15"` in your `composer.json`.
-* The guzzle connector requires `"guzzle/guzzle": "^3.7"` in your `composer.json`.
-* The guzzlehttp connector requires `"guzzlehttp/guzzle": "^5.0"` or `"guzzlehttp/guzzle": "^6.0"` in your `composer.json`.
-
-Once Laravel DigitalOcean is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
-
-* `'GrahamCampbell\DigitalOcean\DigitalOceanServiceProvider'`
-
-You can register the DigitalOcean facade in the `aliases` key of your `config/app.php` file if you like.
-
-* `'DigitalOcean' => 'GrahamCampbell\DigitalOcean\Facades\DigitalOcean'`
 
 
 ## Configuration
