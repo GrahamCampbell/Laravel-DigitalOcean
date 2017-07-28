@@ -17,7 +17,7 @@ Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](http
 
 ## Installation
 
-Laravel DigitalOcean requires [PHP](https://php.net) 7. This particular version supports Laravel 5.1, 5.2, 5.3, or 5.4 only.
+Laravel DigitalOcean requires [PHP](https://php.net) 7. This particular version supports Laravel 5.1, 5.2, 5.3, 5.4, or 5.5 only.
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org). 
 You will need to install at least one of the following dependencies for each driver:
