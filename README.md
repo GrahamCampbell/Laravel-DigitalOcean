@@ -32,7 +32,7 @@ So, for example, if using the guzzlehttp driver:
 $ composer require graham-campbell/digitalocean guzzlehttp/guzzle
 ```
 
-Once installed, you need to register the `GrahamCampbell\DigitalOcean\DigitalOceanServiceProvider` service provider in your `config/app.php`, and optionally alias our facade:
+Once installed, you need to register the `GrahamCampbell\DigitalOcean\DigitalOceanServiceProvider` service provider in your `config/app.php`, or if you're using Laravel 5.5, this can be done via the automatic package discovery. You can also optionally alias our facade:
 
 ```php
         'DigitalOcean' => GrahamCampbell\DigitalOcean\Facades\DigitalOcean::class,
