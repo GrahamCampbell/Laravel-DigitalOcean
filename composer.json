@@ -22,8 +22,8 @@
         "guzzle/guzzle": "^3.7",
         "guzzlehttp/guzzle" : "^5.0|^6.0",
         "kriswallsmith/buzz": "^0.10",
-        "mockery/mockery": "dev-master#c90a17247147543081e4d00f46911e422b49e583",
-        "phpunit/phpunit": "^6.0"
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^6.1"
     },
     "suggest": {
         "kriswallsmith/buzz": "Enables the buzz connector.",
