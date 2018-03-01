@@ -17,7 +17,7 @@ Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](http
 
 ## Installation
 
-Laravel DigitalOcean requires [PHP](https://php.net) 7. This particular version supports Laravel 5.1, 5.2, 5.3, 5.4, or 5.5 only.
+Laravel DigitalOcean requires [PHP](https://php.net) 7.1 or 7.2. This particular version supports Laravel 5.5 or 5.6 only.
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org). 
 You will need to install at least one of the following dependencies for each driver:
@@ -32,7 +32,7 @@ So, for example, if using the guzzlehttp driver:
 $ composer require graham-campbell/digitalocean guzzlehttp/guzzle
 ```
 
-Once installed, you need to register the `GrahamCampbell\DigitalOcean\DigitalOceanServiceProvider` service provider in your `config/app.php`, or if you're using Laravel 5.5, this can be done via the automatic package discovery.
+Once installed, if you are not using automatic package discovery, then you need to register the `GrahamCampbell\DigitalOcean\DigitalOceanServiceProvider` service provider in your `config/app.php`.
 
 You can also optionally alias our facade:
 
