@@ -16,6 +16,7 @@ namespace GrahamCampbell\Tests\DigitalOcean\Adapters;
 use DigitalOceanV2\Adapter\GuzzleHttpAdapter;
 use GrahamCampbell\DigitalOcean\Adapters\GuzzleHttpConnector;
 use GrahamCampbell\TestBench\AbstractTestCase;
+use InvalidArgumentException;
 
 /**
  * This is the guzzlehttp connector test class.
@@ -33,13 +34,12 @@ class GuzzleHttpConnectorTest extends AbstractTestCase
         $this->assertInstanceOf(GuzzleHttpAdapter::class, $return);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The guzzlehttp connector requires configuration.
-     */
     public function testConnectWithoutTokent()
     {
         $connector = $this->getGuzzleHttpConnector();
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The guzzlehttp connector requires configuration.');
 
         $connector->connect([]);
     }

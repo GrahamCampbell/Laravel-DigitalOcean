@@ -21,6 +21,7 @@ use GrahamCampbell\DigitalOcean\Adapters\GuzzleConnector;
 use GrahamCampbell\DigitalOcean\Adapters\GuzzleHttpConnector;
 use GrahamCampbell\DigitalOcean\Adapters\LocalConnector;
 use GrahamCampbell\TestBench\AbstractTestCase;
+use InvalidArgumentException;
 use Mockery;
 
 /**
@@ -60,24 +61,22 @@ class ConnectionFactoryTest extends AbstractTestCase
         $this->assertInstanceOf($class, $return);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage A driver must be specified.
-     */
     public function testCreateEmptyDriverConnector()
     {
         $factory = $this->getConnectionFactory();
 
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('A driver must be specified.');
+
         $factory->createConnector([]);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Unsupported driver [unsupported].
-     */
     public function testCreateUnsupportedDriverConnector()
     {
         $factory = $this->getConnectionFactory();
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Unsupported driver [unsupported].');
 
         $factory->createConnector(['driver' => 'unsupported']);
     }

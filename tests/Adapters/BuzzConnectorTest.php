@@ -16,6 +16,7 @@ namespace GrahamCampbell\Tests\DigitalOcean\Adapters;
 use DigitalOceanV2\Adapter\BuzzAdapter;
 use GrahamCampbell\DigitalOcean\Adapters\BuzzConnector;
 use GrahamCampbell\TestBench\AbstractTestCase;
+use InvalidArgumentException;
 
 /**
  * This is the buzz connector test class.
@@ -33,13 +34,12 @@ class BuzzConnectorTest extends AbstractTestCase
         $this->assertInstanceOf(BuzzAdapter::class, $return);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The buzz connector requires configuration.
-     */
     public function testConnectWithoutToken()
     {
         $connector = $this->getBuzzConnector();
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The buzz connector requires configuration.');
 
         $connector->connect([]);
     }
