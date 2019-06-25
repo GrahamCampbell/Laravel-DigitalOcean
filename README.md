@@ -165,3 +165,16 @@ If you discover a security vulnerability within this package, please send an ema
 ## License
 
 Laravel DigitalOcean is licensed under [The MIT License (MIT)](LICENSE).
+
+
+---
+
+<div align="center">
+	<b>
+		<a href="https://tidelift.com/subscription/pkg/packagist-graham-campbell-digitalocean?utm_source=packagist-graham-campbell-digitalocean&utm_medium=referral&utm_campaign=readme">Get professional support for Laravel DigitalOcean with a Tidelift subscription</a>
+	</b>
+	<br>
+	<sub>
+		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
+	</sub>
+</div>
