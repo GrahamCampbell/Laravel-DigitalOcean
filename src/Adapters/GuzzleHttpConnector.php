@@ -15,6 +15,7 @@ namespace GrahamCampbell\DigitalOcean\Adapters;
 
 use DigitalOceanV2\Adapter\GuzzleHttpAdapter;
 use GrahamCampbell\Manager\ConnectorInterface;
+use Illuminate\Support\Arr;
 use InvalidArgumentException;
 
 /**
@@ -53,7 +54,7 @@ class GuzzleHttpConnector implements ConnectorInterface
             throw new InvalidArgumentException('The guzzlehttp connector requires configuration.');
         }
 
-        return array_only($config, ['token']);
+        return Arr::only($config, ['token']);
     }
 
     /**

@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V5.2.1 (Upcoming)
+
+* Avoid deprecated Laravel code
+
+
 ## V5.2 (07/04/2019)
 
 * Added Laravel 5.8 support
