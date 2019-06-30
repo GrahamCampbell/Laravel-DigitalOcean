@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V5.2.1 (Upcoming)
+## V5.2.1 (30/06/2019)
 
 * Avoid deprecated Laravel code
 
