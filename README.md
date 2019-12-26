@@ -3,7 +3,7 @@ Laravel DigitalOcean
 
 Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a [DigitalOceanV2](https://github.com/toin0u/DigitalOceanV2) bridge for [Laravel 5](http://laravel.com). It utilises my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-DigitalOcean/releases), [security policy](https://github.com/GrahamCampbell/Laravel-DigitalOcean/security/policy), [license](LICENSE), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
 
-![Laravel DigitalOcean](https://cloud.githubusercontent.com/assets/2829600/4432303/c13e7608-468c-11e4-9427-65d32d2daa28.PNG)
+![Banner](https://user-images.githubusercontent.com/2829600/71477345-60993680-27e1-11ea-9161-d2c91c65f77a.png)
 
 <p align="center">
 <a href="https://styleci.io/repos/22224545"><img src="https://styleci.io/repos/22224545/shield" alt="StyleCI Status"></img></a>
