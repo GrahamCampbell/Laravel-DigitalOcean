@@ -19,6 +19,9 @@ use Illuminate\Contracts\Config\Repository;
 /**
  * This is the digitalocean manager class.
  *
+ * @method \DigitalOceanV2\DigitalOceanV2 connection(string|null $name)
+ * @method \DigitalOceanV2\DigitalOceanV2 reconnect(string|null $name)
+ * @method array<string,\DigitalOceanV2\DigitalOceanV2> getConnections(string $name)
  * @method \DigitalOceanV2\Api\Action action()
  * @method \DigitalOceanV2\Api\Image image()
  * @method \DigitalOceanV2\Api\Domain domain()
