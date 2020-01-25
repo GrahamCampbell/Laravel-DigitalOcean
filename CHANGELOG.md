@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V5.4 (25/01/2020)
+
+* Added Laravel 7 support
+
+
 ## V5.3 (26/08/2019)
 
 * Added Laravel 6 support
