@@ -23,7 +23,7 @@ use InvalidArgumentException;
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class GuzzleConnector implements ConnectorInterface
+final class GuzzleConnector implements ConnectorInterface
 {
     /**
      * Establish an adapter connection.
@@ -34,9 +34,9 @@ class GuzzleConnector implements ConnectorInterface
      */
     public function connect(array $config)
     {
-        $config = $this->getConfig($config);
+        $config = self::getConfig($config);
 
-        return $this->getAdapter($config);
+        return self::getAdapter($config);
     }
 
     /**
@@ -48,7 +48,7 @@ class GuzzleConnector implements ConnectorInterface
      *
      * @return string[]
      */
-    protected function getConfig(array $config)
+    private static function getConfig(array $config)
     {
         if (!array_key_exists('token', $config)) {
             throw new InvalidArgumentException('The guzzle connector requires configuration.');
@@ -64,7 +64,7 @@ class GuzzleConnector implements ConnectorInterface
      *
      * @return \DigitalOceanV2\Adapter\GuzzleHttpAdapter
      */
-    protected function getAdapter(array $config)
+    private static function getAdapter(array $config)
     {
         return new GuzzleHttpAdapter($config['token']);
     }

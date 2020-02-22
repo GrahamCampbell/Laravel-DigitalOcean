@@ -23,7 +23,7 @@ use InvalidArgumentException;
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class BuzzConnector implements ConnectorInterface
+final class BuzzConnector implements ConnectorInterface
 {
     /**
      * Establish an adapter connection.
@@ -34,9 +34,9 @@ class BuzzConnector implements ConnectorInterface
      */
     public function connect(array $config)
     {
-        $config = $this->getConfig($config);
+        $config = self::getConfig($config);
 
-        return $this->getAdapter($config);
+        return self::getAdapter($config);
     }
 
     /**
@@ -48,7 +48,7 @@ class BuzzConnector implements ConnectorInterface
      *
      * @return string[]
      */
-    protected function getConfig(array $config)
+    private static function getConfig(array $config)
     {
         if (!array_key_exists('token', $config)) {
             throw new InvalidArgumentException('The buzz connector requires configuration.');
@@ -64,7 +64,7 @@ class BuzzConnector implements ConnectorInterface
      *
      * @return \DigitalOceanV2\Adapter\BuzzAdapter
      */
-    protected function getAdapter(array $config)
+    private static function getAdapter(array $config)
     {
         return new BuzzAdapter($config['token']);
     }
