@@ -11,41 +11,41 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\Tests\DigitalOcean\Adapters;
+namespace GrahamCampbell\Tests\DigitalOcean\Adapter\Connector;
 
-use DigitalOceanV2\Adapter\GuzzleAdapter;
-use GrahamCampbell\DigitalOcean\Adapters\GuzzleConnector;
+use DigitalOceanV2\Adapter\BuzzAdapter;
+use GrahamCampbell\DigitalOcean\Adapter\Connector\BuzzConnector;
 use GrahamCampbell\TestBench\AbstractTestCase;
 use InvalidArgumentException;
 
 /**
- * This is the guzzle connector test class.
+ * This is the buzz connector test class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class GuzzleConnectorTest extends AbstractTestCase
+class BuzzConnectorTest extends AbstractTestCase
 {
     public function testConnectStandard()
     {
-        $connector = $this->getGuzzleConnector();
+        $connector = $this->getBuzzConnector();
 
         $return = $connector->connect(['token' => 'your-token']);
 
-        $this->assertInstanceOf(GuzzleAdapter::class, $return);
+        $this->assertInstanceOf(BuzzAdapter::class, $return);
     }
 
-    public function testConnectWithoutTokent()
+    public function testConnectWithoutToken()
     {
-        $connector = $this->getGuzzleConnector();
+        $connector = $this->getBuzzConnector();
 
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('The guzzle connector requires configuration.');
+        $this->expectExceptionMessage('The buzz connector requires configuration.');
 
         $connector->connect([]);
     }
 
-    protected function getGuzzleConnector()
+    protected function getBuzzConnector()
     {
-        return new GuzzleConnector();
+        return new BuzzConnector();
     }
 }

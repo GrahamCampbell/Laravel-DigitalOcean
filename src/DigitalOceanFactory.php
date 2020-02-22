@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace GrahamCampbell\DigitalOcean;
 
 use DigitalOceanV2\DigitalOceanV2;
-use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;
+use GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory as AdapterFactory;
 
 /**
  * This is the digitalocean factory class.
@@ -26,14 +26,14 @@ class DigitalOceanFactory
     /**
      * The adapter factory instance.
      *
-     * @var \GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory
+     * @var \GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory
      */
     protected $adapter;
 
     /**
      * Create a new filesystem factory instance.
      *
-     * @param \GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory $adapter
+     * @param \GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory $adapter
      *
      * @return void
      */
@@ -71,7 +71,7 @@ class DigitalOceanFactory
     /**
      * Get the adapter factory instance.
      *
-     * @return \GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory
+     * @return \GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory
      */
     public function getAdapter()
     {

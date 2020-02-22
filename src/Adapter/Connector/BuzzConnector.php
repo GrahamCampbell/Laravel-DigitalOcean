@@ -11,26 +11,26 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\DigitalOcean\Adapters;
+namespace GrahamCampbell\DigitalOcean\Adapter\Connector;
 
-use DigitalOceanV2\Adapter\GuzzleAdapter;
+use DigitalOceanV2\Adapter\BuzzAdapter;
 use GrahamCampbell\Manager\ConnectorInterface;
 use Illuminate\Support\Arr;
 use InvalidArgumentException;
 
 /**
- * This is the guzzle connector class.
+ * This is the buzz connector class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class GuzzleConnector implements ConnectorInterface
+class BuzzConnector implements ConnectorInterface
 {
     /**
      * Establish an adapter connection.
      *
      * @param string[] $config
      *
-     * @return \DigitalOceanV2\Adapter\GuzzleAdapter
+     * @return \DigitalOceanV2\Adapter\BuzzAdapter
      */
     public function connect(array $config)
     {
@@ -51,21 +51,21 @@ class GuzzleConnector implements ConnectorInterface
     protected function getConfig(array $config)
     {
         if (!array_key_exists('token', $config)) {
-            throw new InvalidArgumentException('The guzzle connector requires configuration.');
+            throw new InvalidArgumentException('The buzz connector requires configuration.');
         }
 
         return Arr::only($config, ['token']);
     }
 
     /**
-     * Get the guzzle adapter.
+     * Get the buzz adapter.
      *
      * @param string[] $config
      *
-     * @return \DigitalOceanV2\Adapter\GuzzleAdapter
+     * @return \DigitalOceanV2\Adapter\BuzzAdapter
      */
     protected function getAdapter(array $config)
     {
-        return new GuzzleAdapter($config['token']);
+        return new BuzzAdapter($config['token']);
     }
 }

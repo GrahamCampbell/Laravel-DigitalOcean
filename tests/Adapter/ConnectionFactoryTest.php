@@ -11,15 +11,14 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\Tests\DigitalOcean\Adapters;
+namespace GrahamCampbell\Tests\DigitalOcean\Adapter;
 
 use DigitalOceanV2\Adapter\AdapterInterface;
 use DigitalOceanV2\Adapter\BuzzAdapter;
-use GrahamCampbell\DigitalOcean\Adapters\BuzzConnector;
-use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory;
-use GrahamCampbell\DigitalOcean\Adapters\GuzzleConnector;
-use GrahamCampbell\DigitalOcean\Adapters\GuzzleHttpConnector;
-use GrahamCampbell\DigitalOcean\Adapters\LocalConnector;
+use GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory;
+use GrahamCampbell\DigitalOcean\Adapter\Connector\BuzzConnector;
+use GrahamCampbell\DigitalOcean\Adapter\Connector\ConnectorInterface;
+use GrahamCampbell\DigitalOcean\Adapter\Connector\GuzzleConnector;
 use GrahamCampbell\TestBench\AbstractTestCase;
 use InvalidArgumentException;
 use Mockery;
@@ -45,7 +44,6 @@ class ConnectionFactoryTest extends AbstractTestCase
         return [
             ['buzz', BuzzConnector::class],
             ['guzzle', GuzzleConnector::class],
-            ['guzzlehttp', GuzzleHttpConnector::class],
         ];
     }
 
@@ -90,7 +88,7 @@ class ConnectionFactoryTest extends AbstractTestCase
     {
         $mock = Mockery::mock(ConnectionFactory::class.'[createConnector]');
 
-        $connector = Mockery::mock(LocalConnector::class);
+        $connector = Mockery::mock(ConnectorInterface::class);
 
         $connector->shouldReceive('connect')->once()
             ->with(['name' => 'main', 'driver' => 'buzz', 'token' => 'your-token'])

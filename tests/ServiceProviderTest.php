@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace GrahamCampbell\Tests\DigitalOcean;
 
 use DigitalOceanV2\DigitalOceanV2;
-use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;
+use GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory as AdapterFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;

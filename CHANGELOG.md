@@ -2,6 +2,15 @@ CHANGE LOG
 ==========
 
 
+## V6.0 (Upcoming)
+
+* Dropped Laravel 5
+* Dropped guzzle 5 support
+* Removed guzzle 3 adapter
+* Renamed guzzlehttp adapter to guzzle
+* Moved around internals
+
+
 ## V5.4 (25/01/2020)
 
 * Added Laravel 7 support

@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\DigitalOcean\Adapters;
+namespace GrahamCampbell\DigitalOcean\Adapter;
 
 use InvalidArgumentException;
 
@@ -51,11 +51,9 @@ class ConnectionFactory
 
         switch ($config['driver']) {
             case 'buzz':
-                return new BuzzConnector();
+                return new Connector\BuzzConnector();
             case 'guzzle':
-                return new GuzzleConnector();
-            case 'guzzlehttp':
-                return new GuzzleHttpConnector();
+                return new Connector\GuzzleConnector();
         }
 
         throw new InvalidArgumentException("Unsupported driver [{$config['driver']}].");

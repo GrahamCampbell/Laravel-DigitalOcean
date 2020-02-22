@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace GrahamCampbell\DigitalOcean;
 
 use DigitalOceanV2\DigitalOceanV2;
-use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory as AdapterFactory;
+use GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory as AdapterFactory;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;

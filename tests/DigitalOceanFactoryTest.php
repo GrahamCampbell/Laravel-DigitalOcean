@@ -15,7 +15,7 @@ namespace GrahamCampbell\Tests\DigitalOcean;
 
 use DigitalOceanV2\Adapter\AdapterInterface;
 use DigitalOceanV2\DigitalOceanV2;
-use GrahamCampbell\DigitalOcean\Adapters\ConnectionFactory;
+use GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
