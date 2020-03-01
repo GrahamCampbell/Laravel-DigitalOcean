@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V6.0 (Upcoming)
+## V6.0 (01/03/2020)
 
 * Dropped Laravel 5
 * Dropped guzzle 5 support
