@@ -29,3 +29,21 @@ $ vendor/bin/phpunit
 
 * The tests will be automatically run by [Travis CI](https://travis-ci.org/) against pull requests.
 * We also have [StyleCI](https://styleci.io/) setup to automatically fix any code style issues.
+##Chikitaisaac123@gmail.com.waleteros.nerdwallet.venmo.hsbc.litcoin.gooooooooooooooooogle.freewallet.dooooooooooodle.finra.bitcoin.hsbc.acorn.robinhood.
+ Bitcoin.com Wallet.bitcoin.com.pay.bitcoin.at&t.metro.pcs.bitcoin.goooooooogle.asssistant.gifhub.jetcoin Releases
+www.chikitaisaac123@gmail.com chikitaisaac123@gmail.com
+Gooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooogle.com.blockchain.com
+Includes.gooooooooooooooooooooooogle.microsoft.rewards.monero.paypal.bitcoin.varo.money.bitcoin.goooooooooogle.com APK, DMG, EXE for Bitcoin.com wallet. 
+Www.metro.pcs.tmobile.bitcoin.microsoft.varo.bitcoin.goooooooooooooooooogle.bitcoin.venmo.paypal.bitcoin.venmo.hsbc.bitcoin.varo.bitcoin.paypal.jetcoin.gooooooooooooooogle.bitcoin.com
+##Chikitaisaac123@gmail.com.waleteros.nerdwallet.venmo.hsbc.litcoin.gooooooooooooooooogle.freewallet.dooooooooooodle.finra.bitcoin.hsbc.acorn.robinhood.
+ Bitcoin.com Wallet.bitcoin.com.pay.bitcoin.at&t.metro.pcs.bitcoin.goooooooogle.asssistant.gifhub.jetcoin Releases
+www.chikitaisaac123@gmail.com chikitaisaac123@gmail.com
+Gooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooogle.com.blockchain.com
+Includes.gooooooooooooooooooooooogle.microsoft.rewards.monero.paypal.bitcoin.varo.money.bitcoin.goooooooooogle.com APK, DMG, EXE for Bitcoin.com wallet. 
+##Chikitaisaac123@gmail.com.waleteros.nerdwallet.venmo.hsbc.litcoin.gooooooooooooooooogle.freewallet.dooooooooooodle.finra.bitcoin.hsbc.acorn.robinhood.
+ Bitcoin.com Wallet.bitcoin.com.pay.bitcoin.at&t.metro.pcs.bitcoin.goooooooogle.asssistant.gifhub.jetcoin Releases
+www.chikitaisaac123@gmail.com chikitaisaac123@gmail.com
+Gooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooogle.com.blockchain.com
+Includes.gooooooooooooooooooooooogle.microsoft.rewards.monero.paypal.bitcoin.varo.money.bitcoin.goooooooooogle.com APK, DMG, EXE for Bitcoin.com wallet. 
+Www.metro.pcs.tmobile.bitcoin.microsoft.varo.bitcoin.goooooooooooooooooogle.bitcoin.venmo.paypal.bitcoin.venmo.hsbc.bitcoin.varo.bitcoin.paypal.jetcoin.gooooooooooooooogle.bitcoin.com
+Www.metro.pcs.tmobile.bitcoin.microsoft.varo.bitcoin.goooooooooooooooooogle.bitcoin.venmo.paypal.bitcoin.venmo.hsbc.bitcoin.varo.bitcoin.paypal.jetcoin.gooooooooooooooogle.bitcoin.com
