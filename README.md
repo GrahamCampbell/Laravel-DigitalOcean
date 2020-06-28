@@ -36,7 +36,7 @@ You will need to install at least one of the following dependencies for each dri
 So, for example, if using the guzzle driver:
 
 ```bash
-$ composer require graham-campbell/digitalocean guzzlehttp/guzzle
+$ composer require graham-campbell/digitalocean guzzlehttp/guzzle:^6.3
 ```
 
 Once installed, if you are not using automatic package discovery, then you need to register the `GrahamCampbell\DigitalOcean\DigitalOceanServiceProvider` service provider in your `config/app.php`.
