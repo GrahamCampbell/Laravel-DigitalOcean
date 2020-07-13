@@ -28,15 +28,15 @@ Laravel DigitalOcean requires [PHP](https://php.net) 7.2-7.4. This particular ve
 | 6.0          | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org). 
-You will need to install at least one of the following dependencies for each driver:
+You will need to install at least one of the following dependencies:
 
 * The buzz connector requires `kriswallsmith/buzz` (`^0.16`).
-* The guzzle connector requires `guzzlehttp/guzzle` (`^6.3`).
+* The guzzle connector requires `guzzlehttp/guzzle` (`^6.3.1` or `^7.0`).
 
-So, for example, if using the guzzle driver:
+For example, to use Guzzle 7:
 
 ```bash
-$ composer require graham-campbell/digitalocean:^6.0 guzzlehttp/guzzle:^6.3
+$ composer require graham-campbell/digitalocean:^7.0 guzzlehttp/guzzle:^7.0
 ```
 
 Once installed, if you are not using automatic package discovery, then you need to register the `GrahamCampbell\DigitalOcean\DigitalOceanServiceProvider` service provider in your `config/app.php`.
