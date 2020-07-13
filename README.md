@@ -1,16 +1,15 @@
 Laravel DigitalOcean
 ====================
 
-Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a [DigitalOceanV2](https://github.com/toin0u/DigitalOceanV2) bridge for [Laravel](http://laravel.com). It utilises my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-DigitalOcean/releases), [security policy](https://github.com/GrahamCampbell/Laravel-DigitalOcean/security/policy), [license](LICENSE), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
+Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a [DigitalOceanV2](https://github.com/DigitalOceanPHP/Client) bridge for [Laravel](http://laravel.com). It utilises my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-DigitalOcean/releases), [security policy](https://github.com/GrahamCampbell/Laravel-DigitalOcean/security/policy), [license](LICENSE), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
 
 ![Banner](https://user-images.githubusercontent.com/2829600/71477345-60993680-27e1-11ea-9161-d2c91c65f77a.png)
 
 <p align="center">
+<a href="https://github.com/GrahamCampbell/Laravel-DigitalOcean/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Laravel-DigitalOcean/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/22224545"><img src="https://github.styleci.io/repos/22224545/shield" alt="StyleCI Status"></img></a>
-<a href="https://github.com/GrahamCampbell/Laravel-DigitalOcean/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Laravel-DigitalOcean/Tests?style=flat-square" alt="Build Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-DigitalOcean/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-DigitalOcean?style=flat-square" alt="Coverage Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-DigitalOcean"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-DigitalOcean?style=flat-square" alt="Quality Score"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
+<a href="https://packagist.org/packages/graham-campbell/digitalocean"><img src="https://img.shields.io/packagist/dt/graham-campbell/digitalocean?style=flat-square" alt="Packagist Downloads"></img></a>
 <a href="https://github.com/GrahamCampbell/Laravel-DigitalOcean/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-DigitalOcean?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
@@ -157,7 +156,7 @@ class Foo
 App::make('Foo')->bar();
 ```
 
-For more information on how to use the `\DigitalOceanV2\DigitalOceanV2` class we are calling behind the scenes here, check out the docs at https://github.com/toin0u/DigitalOceanV2#action, and the manager class at https://github.com/GrahamCampbell/Laravel-Manager#usage.
+For more information on how to use the `\DigitalOceanV2\DigitalOceanV2` class we are calling behind the scenes here, check out the docs at https://github.com/DigitalOceanPHP/Client, and the manager class at https://github.com/GrahamCampbell/Laravel-Manager#usage.
 
 ##### Further Information
 
