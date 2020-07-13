@@ -100,7 +100,7 @@ DigitalOcean::size()->getAll();
 // this example is simple, and there are far more methods available
 ```
 
-The digitalocean manager will behave like it is a `\DigitalOceanV2\DigitalOceanV2` class. If you want to call specific connections, you can do with the `connection` method:
+The digitalocean manager will behave like it is a `\DigitalOceanV2\Client` class. If you want to call specific connections, you can do with the `connection` method:
 
 ```php
 use GrahamCampbell\DigitalOcean\Facades\DigitalOcean;
@@ -157,7 +157,7 @@ class Foo
 App::make('Foo')->bar();
 ```
 
-For more information on how to use the `\DigitalOceanV2\DigitalOceanV2` class we are calling behind the scenes here, check out the docs at https://github.com/toin0u/DigitalOceanV2#action, and the manager class at https://github.com/GrahamCampbell/Laravel-Manager#usage.
+For more information on how to use the `\DigitalOceanV2\Client` class we are calling behind the scenes here, check out the docs at https://github.com/toin0u/DigitalOceanV2#action, and the manager class at https://github.com/GrahamCampbell/Laravel-Manager#usage.
 
 ##### Further Information
 
