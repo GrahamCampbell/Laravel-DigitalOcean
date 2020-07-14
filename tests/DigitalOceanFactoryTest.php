@@ -14,13 +14,12 @@ declare(strict_types=1);
 namespace GrahamCampbell\Tests\DigitalOcean;
 
 use DigitalOceanV2\Client;
+use DigitalOceanV2\HttpClient\HttpMethodsClientInterface;
 use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
-use DigitalOceanV2\HttpClient\HttpMethodsClientInterface;
 use Illuminate\Contracts\Cache\Factory;
 use InvalidArgumentException;
-use Mockery;
 
 /**
  * This is the digitalocean factory test class.
