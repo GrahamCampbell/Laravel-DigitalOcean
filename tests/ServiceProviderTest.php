@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\Tests\DigitalOcean;
 
-use DigitalOceanV2\DigitalOceanV2;
-use GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory as AdapterFactory;
+use DigitalOceanV2\Client;
+use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
@@ -28,9 +28,9 @@ class ServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;
 
-    public function testAdapterFactoryIsInjectable()
+    public function testAuthFactoryIsInjectable()
     {
-        $this->assertIsInjectable(AdapterFactory::class);
+        $this->assertIsInjectable(AuthenticatorFactory::class);
     }
 
     public function testDigitalOceanFactoryIsInjectable()
@@ -45,7 +45,7 @@ class ServiceProviderTest extends AbstractTestCase
 
     public function testBindings()
     {
-        $this->assertIsInjectable(DigitalOceanV2::class);
+        $this->assertIsInjectable(Client::class);
 
         $original = $this->app['digitalocean.connection'];
         $this->app['digitalocean']->reconnect();

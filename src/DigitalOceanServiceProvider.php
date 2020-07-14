@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\DigitalOcean;
 
-use DigitalOceanV2\DigitalOceanV2;
-use GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory as AdapterFactory;
+use DigitalOceanV2\Client;
+use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
@@ -62,24 +62,24 @@ class DigitalOceanServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerAdapterFactory();
+        $this->registerAuthFactory();
         $this->registerDigitalOceanFactory();
         $this->registerManager();
         $this->registerBindings();
     }
 
     /**
-     * Register the adapter factory class.
+     * Register the auth factory class.
      *
      * @return void
      */
-    protected function registerAdapterFactory()
+    protected function registerAuthFactory()
     {
-        $this->app->singleton('digitalocean.adapterfactory', function () {
-            return new AdapterFactory();
+        $this->app->singleton('digitalocean.authfactory', function () {
+            return new AuthenticatorFactory();
         });
 
-        $this->app->alias('digitalocean.adapterfactory', AdapterFactory::class);
+        $this->app->alias('digitalocean.authfactory', AuthenticatorFactory::class);
     }
 
     /**
@@ -90,9 +90,9 @@ class DigitalOceanServiceProvider extends ServiceProvider
     protected function registerDigitalOceanFactory()
     {
         $this->app->singleton('digitalocean.factory', function (Container $app) {
-            $adapter = $app['digitalocean.adapterfactory'];
+            $auth = $app['digitalocean.authfactory'];
 
-            return new DigitalOceanFactory($adapter);
+            return new DigitalOceanFactory($auth);
         });
 
         $this->app->alias('digitalocean.factory', DigitalOceanFactory::class);
@@ -128,7 +128,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
             return $manager->connection();
         });
 
-        $this->app->alias('digitalocean.connection', DigitalOceanV2::class);
+        $this->app->alias('digitalocean.connection', Client::class);
     }
 
     /**
@@ -139,7 +139,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
     public function provides()
     {
         return [
-            'digitalocean.adapterfactory',
+            'digitalocean.authfactory',
             'digitalocean.factory',
             'digitalocean',
             'digitalocean.connection',

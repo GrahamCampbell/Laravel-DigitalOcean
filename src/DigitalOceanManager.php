@@ -19,18 +19,28 @@ use Illuminate\Contracts\Config\Repository;
 /**
  * This is the digitalocean manager class.
  *
- * @method \DigitalOceanV2\DigitalOceanV2 connection(string|null $name)
- * @method \DigitalOceanV2\DigitalOceanV2 reconnect(string|null $name)
- * @method array<string,\DigitalOceanV2\DigitalOceanV2> getConnections(string $name)
+ * @method \DigitalOceanV2\Client connection(string|null $name)
+ * @method \DigitalOceanV2\Client reconnect(string|null $name)
+ * @method array<string,\DigitalOceanV2\Client> getConnections(string $name)
+ * @method \DigitalOceanV2\Api\Account account()
  * @method \DigitalOceanV2\Api\Action action()
- * @method \DigitalOceanV2\Api\Image image()
+ * @method \DigitalOceanV2\Api\Certificate certificate()
  * @method \DigitalOceanV2\Api\Domain domain()
  * @method \DigitalOceanV2\Api\DomainRecord domainRecord()
- * @method \DigitalOceanV2\Api\Size size()
- * @method \DigitalOceanV2\Api\Region region()
- * @method \DigitalOceanV2\Api\Key key()
  * @method \DigitalOceanV2\Api\Droplet droplet()
- * @method \DigitalOceanV2\Api\RateLimit rateLimit()
+ * @method \DigitalOceanV2\Api\FloatingIp floatingIp()
+ * @method \DigitalOceanV2\Api\Image image()
+ * @method \DigitalOceanV2\Api\Key key()
+ * @method \DigitalOceanV2\Api\LoadBalancer loadBalancer()
+ * @method \DigitalOceanV2\Api\Region region()
+ * @method \DigitalOceanV2\Api\Size size()
+ * @method \DigitalOceanV2\Api\Snapshot snapshot()
+ * @method \DigitalOceanV2\Api\Tag tag()
+ * @method \DigitalOceanV2\Api\Volume volume()
+ * @method void authenticate(string $token)
+ * @method void setUrl(string $url)
+ * @method \DigitalOceanV2\HttpClient\Message\Response|null getLastResponse()
+ * @method \Http\Client\Common\HttpMethodsClientInterface getHttpClient()
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
@@ -62,7 +72,7 @@ class DigitalOceanManager extends AbstractManager
      *
      * @param array $config
      *
-     * @return \DigitalOceanV2\DigitalOceanV2
+     * @return \DigitalOceanV2\Client
      */
     protected function createConnection(array $config)
     {

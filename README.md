@@ -28,12 +28,7 @@ Laravel DigitalOcean requires [PHP](https://php.net) 7.2-7.4. This particular ve
 | 7.0          | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org). 
-You will need to install at least one of the following dependencies:
-
-* The buzz connector requires `kriswallsmith/buzz` (`^0.16`).
-* The guzzle connector requires `guzzlehttp/guzzle` (`^6.3.1` or `^7.0`).
-
-For example, to use Guzzle 7:
+You will need to install at least one of the following dependencies: `guzzlehttp/guzzle:^6.3.1`, `guzzlehttp/guzzle:^7.0`, or `kriswallsmith/buzz: ^0.16`. For example, to use Guzzle 7:
 
 ```bash
 $ composer require graham-campbell/digitalocean:^7.0 guzzlehttp/guzzle:^7.0
@@ -68,14 +63,14 @@ This option (`'default'`) is where you may specify which of the connections belo
 
 ##### DigitalOcean Connections
 
-This option (`'connections'`) is where each of the connections are setup for your application. Example configuration has been included, but you may add as many connections as you would like.
+This option (`'connections'`) is where each of the connections are setup for your application. Example configuration has been included, but you may add as many connections as you would like. Note that the 2 supported authentication methods are: `"none"` and `"token"`.
 
 
 ## Usage
 
 ##### DigitalOceanManager
 
-This is the class of most interest. It is bound to the ioc container as `'digitalocean'` and can be accessed using the `Facades\DigitalOcean` facade. This class implements the `ManagerInterface` by extending `AbstractManager`. The interface and abstract class are both part of my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package, so you may want to go and checkout the docs for how to use the manager class over at [that repo](https://github.com/GrahamCampbell/Laravel-Manager#usage). Note that the connection class returned will always be an instance of `\DigitalOcean\Client`.
+This is the class of most interest. It is bound to the ioc container as `'digitalocean'` and can be accessed using the `Facades\DigitalOcean` facade. This class implements the `ManagerInterface` by extending `AbstractManager`. The interface and abstract class are both part of my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package, so you may want to go and checkout the docs for how to use the manager class over at [that repo](https://github.com/GrahamCampbell/Laravel-Manager#usage). Note that the connection class returned will always be an instance of `\DigitalOceanV2\Client`.
 
 ##### Facades\DigitalOcean
 
@@ -105,11 +100,8 @@ The digitalocean manager will behave like it is a `\DigitalOceanV2\Client` class
 ```php
 use GrahamCampbell\DigitalOcean\Facades\DigitalOcean;
 
-// the alternative connection is the other example provided in the default config
-DigitalOcean::connection('alternative')->rateLimit()->getRateLimit()->remaining;
-
-// let's check how long we have until the limit will reset
-DigitalOcean::connection('alternative')->rateLimit()->getRateLimit()->reset;
+// select the your_connection_name connection, then get going
+DigitalOcean::connection('your_connection_name')->droplet()->getById(12345);
 ```
 
 With that in mind, note that:

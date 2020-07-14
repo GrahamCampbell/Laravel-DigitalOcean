@@ -40,13 +40,8 @@ return [
     'connections' => [
 
         'main' => [
-            'driver'  => 'guzzle',
             'token'   => 'your-token',
-        ],
-
-        'other' => [
-            'driver'  => 'buzz',
-            'token'   => 'your-token',
+            'method'  => 'token',
         ],
 
     ],

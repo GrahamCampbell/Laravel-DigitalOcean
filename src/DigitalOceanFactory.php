@@ -13,68 +13,62 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\DigitalOcean;
 
-use DigitalOceanV2\DigitalOceanV2;
-use GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory as AdapterFactory;
+use DigitalOceanV2\Client;
+use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
+use Illuminate\Support\Arr;
+use InvalidArgumentException;
 
 /**
- * This is the digitalocean factory class.
+ * This is the DigitalOcean factory class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
 class DigitalOceanFactory
 {
     /**
-     * The adapter factory instance.
+     * The authenticator factory instance.
      *
-     * @var \GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory
+     * @var \GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory
      */
-    protected $adapter;
+    protected $auth;
 
     /**
-     * Create a new filesystem factory instance.
+     * Create a new DigitalOcean factory instance.
      *
-     * @param \GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory $adapter
+     * @param \GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory $auth
      *
      * @return void
      */
-    public function __construct(AdapterFactory $adapter)
+    public function __construct(AuthenticatorFactory $auth)
     {
-        $this->adapter = $adapter;
+        $this->auth = $auth;
     }
 
     /**
-     * Make a new digitalocean client.
+     * Make a new DigitalOcean client.
      *
      * @param string[] $config
      *
-     * @return \DigitalOceanV2\DigitalOceanV2
+     * @throws \InvalidArgumentException
+     *
+     * @return \DigitalOceanV2\Client
      */
     public function make(array $config)
     {
-        $adapter = $this->createAdapter($config);
+        $client = new Client();
 
-        return new DigitalOceanV2($adapter);
-    }
+        if (!array_key_exists('method', $config)) {
+            throw new InvalidArgumentException('The DigitalOcean factory requires an auth method.');
+        }
 
-    /**
-     * Establish an adapter connection.
-     *
-     * @param array $config
-     *
-     * @return \DigitalOceanV2\Adapter\AdapterInterface
-     */
-    public function createAdapter(array $config)
-    {
-        return $this->adapter->make($config);
-    }
+        if ($url = Arr::get($config, 'url')) {
+            $client->setUrl($url);
+        }
 
-    /**
-     * Get the adapter factory instance.
-     *
-     * @return \GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory
-     */
-    public function getAdapter()
-    {
-        return $this->adapter;
+        if ($config['method'] === 'none') {
+            return $client;
+        }
+
+        return $this->auth->make($config['method'])->with($client)->authenticate($config);
     }
 }

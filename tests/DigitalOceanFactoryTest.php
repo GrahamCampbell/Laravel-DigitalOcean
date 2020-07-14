@@ -13,12 +13,13 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\Tests\DigitalOcean;
 
-use DigitalOceanV2\Adapter\AdapterInterface;
-use DigitalOceanV2\DigitalOceanV2;
-use GrahamCampbell\DigitalOcean\Adapter\ConnectionFactory;
+use DigitalOceanV2\Client;
+use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
-use GrahamCampbell\DigitalOcean\DigitalOceanManager;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
+use DigitalOceanV2\HttpClient\HttpMethodsClientInterface;
+use Illuminate\Contracts\Cache\Factory;
+use InvalidArgumentException;
 use Mockery;
 
 /**
@@ -28,49 +29,58 @@ use Mockery;
  */
 class DigitalOceanFactoryTest extends AbstractTestBenchTestCase
 {
-    public function testMake()
+    public function testMakeStandard()
     {
-        $config = ['driver' => 'buzz', 'token'  => 'your-token'];
+        $factory = $this->getFactory();
 
-        $manager = Mockery::mock(DigitalOceanManager::class);
+        $client = $factory[0]->make(['token' => 'your-token', 'method' => 'token']);
 
-        $factory = $this->getMockedFactory($config, $manager);
-
-        $return = $factory->make($config, $manager);
-
-        $this->assertInstanceOf(DigitalOceanV2::class, $return);
+        $this->assertInstanceOf(Client::class, $client);
+        $this->assertInstanceOf(HttpMethodsClientInterface::class, $client->getHttpClient());
     }
 
-    public function testAdapter()
+    public function testMakeStandardExplicitUrl()
     {
-        $factory = $this->getDigitalOceanFactory();
+        $factory = $this->getFactory();
 
-        $config = ['driver' => 'guzzlehttp', 'token'  => 'your-token'];
+        $client = $factory[0]->make(['token' => 'your-token', 'method' => 'token', 'url' => 'https://api.example.com']);
 
-        $factory->getAdapter()->shouldReceive('make')->once()
-            ->with($config)->andReturn(Mockery::mock(AdapterInterface::class));
-
-        $return = $factory->createAdapter($config);
-
-        $this->assertInstanceOf(AdapterInterface::class, $return);
+        $this->assertInstanceOf(Client::class, $client);
+        $this->assertInstanceOf(HttpMethodsClientInterface::class, $client->getHttpClient());
     }
 
-    protected function getDigitalOceanFactory()
+    public function testMakeNoneMethod()
     {
-        $adapter = Mockery::mock(ConnectionFactory::class);
+        $factory = $this->getFactory();
 
-        return new DigitalOceanFactory($adapter);
+        $client = $factory[0]->make(['method' => 'none']);
+
+        $this->assertInstanceOf(Client::class, $client);
+        $this->assertInstanceOf(HttpMethodsClientInterface::class, $client->getHttpClient());
     }
 
-    protected function getMockedFactory($config, $manager)
+    public function testMakeInvalidMethod()
     {
-        $adapter = Mockery::mock(ConnectionFactory::class);
+        $factory = $this->getFactory();
 
-        $mock = Mockery::mock(DigitalOceanFactory::class.'[createAdapter]', [$adapter]);
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Unsupported authentication method [bar].');
 
-        $mock->shouldReceive('createAdapter')->once()
-            ->with($config)->andReturn(Mockery::mock(AdapterInterface::class));
+        $factory[0]->make(['method' => 'bar']);
+    }
 
-        return $mock;
+    public function testMakeEmpty()
+    {
+        $factory = $this->getFactory();
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The DigitalOcean factory requires an auth method.');
+
+        $factory[0]->make([]);
+    }
+
+    protected function getFactory()
+    {
+        return [new DigitalOceanFactory(new AuthenticatorFactory())];
     }
 }

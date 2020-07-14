@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\Tests\DigitalOcean;
 
-use DigitalOceanV2\DigitalOceanV2;
+use DigitalOceanV2\Client;
 use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
@@ -40,7 +40,7 @@ class DigitalOceanManagerTest extends AbstractTestBenchTestCase
 
         $return = $manager->connection();
 
-        $this->assertInstanceOf(DigitalOceanV2::class, $return);
+        $this->assertInstanceOf(Client::class, $return);
 
         $this->assertArrayHasKey('main', $manager->getConnections());
     }
@@ -58,7 +58,7 @@ class DigitalOceanManagerTest extends AbstractTestBenchTestCase
         $config['name'] = 'main';
 
         $manager->getFactory()->shouldReceive('make')->once()
-            ->with($config)->andReturn(Mockery::mock(DigitalOceanV2::class));
+            ->with($config)->andReturn(Mockery::mock(Client::class));
 
         return $manager;
     }
