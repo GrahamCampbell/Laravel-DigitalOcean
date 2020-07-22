@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V7.0 (UPCOMING)
+## V7.0 (22/07/2020)
 
 * Require toin0u/digitalocean-v2 3.0.*
 
