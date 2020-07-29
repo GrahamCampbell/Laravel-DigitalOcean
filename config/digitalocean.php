@@ -31,9 +31,9 @@ return [
     | DigitalOcean Connections
     |--------------------------------------------------------------------------
     |
-    | Here are each of the connections setup for your application. Example
+    | Here are each of the connections setup for your application. An example
     | configuration has been included, but you may add as many connections as
-    | you would like. Both guzzle and buzz drivers are supported.
+    | you would like.
     |
     */
 
