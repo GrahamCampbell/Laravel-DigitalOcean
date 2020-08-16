@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V7.1 (UPCOMING)
+
+* Support Laravel 8
+
+
 ## V7.0 (22/07/2020)
 
 * Require toin0u/digitalocean-v2 3.0.*

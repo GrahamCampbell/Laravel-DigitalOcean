@@ -20,16 +20,16 @@ Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](http
 
 ## Installation
 
-Laravel DigitalOcean requires [PHP](https://php.net) 7.2-7.4. This particular version supports Laravel 6-7.
+Laravel DigitalOcean requires [PHP](https://php.net) 7.2-7.4. This particular version supports Laravel 6-8.
 
-| DigitalOcean | L5.1               | L5.2               | L5.3               | L5.4               | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 |
-|--------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 2.2          | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 3.2          | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 4.0          | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 5.4          | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| 6.0          | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: |
-| 7.0          | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: |
+| DigitalOcean | L5.1               | L5.2               | L5.3               | L5.4               | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 | L8                 |
+|--------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 2.2          | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 3.2          | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 4.0          | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 5.4          | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                |
+| 6.0          | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :x:                |
+| 7.1          | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org). 
 You will need to install at least one of the following dependencies: `guzzlehttp/guzzle:^6.3.1`, `guzzlehttp/guzzle:^7.0`, or `kriswallsmith/buzz:^0.16`.
@@ -37,7 +37,7 @@ You will need to install at least one of the following dependencies: `guzzlehttp
 For example, to use Guzzle 7:
 
 ```bash
-$ composer require graham-campbell/digitalocean:^7.0 guzzlehttp/guzzle:^7.0
+$ composer require graham-campbell/digitalocean:^7.1 guzzlehttp/guzzle:^7.0
 ```
 
 Once installed, if you are not using automatic package discovery, then you need to register the `GrahamCampbell\DigitalOcean\DigitalOceanServiceProvider` service provider in your `config/app.php`.
