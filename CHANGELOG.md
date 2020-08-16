@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V7.1 (UPCOMING)
+## V7.1 (16/08/2020)
 
 * Support Laravel 8
 
