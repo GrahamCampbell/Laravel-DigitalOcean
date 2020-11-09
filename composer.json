@@ -14,7 +14,7 @@
         "graham-campbell/manager": "^4.5",
         "illuminate/contracts": "^6.0 || ^7.0 || ^8.0",
         "illuminate/support": "^6.0 || ^7.0 || ^8.0",
-        "toin0u/digitalocean-v2": "3.0.*"
+        "toin0u/digitalocean-v2": "3.1.*"
     },
     "require-dev": {
         "graham-campbell/analyzer": "^3.0",
