@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        php: ['7.2', '7.3', '7.4']
+        php: ['7.2', '7.3', '7.4', '8.0']
         laravel: ['6', '7', '8']
         exclude:
           - php: '7.2'
@@ -30,6 +30,14 @@ jobs:
 
       - name: Setup Problem Matchers
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+      - name: Remove Buzz
+        uses: nick-invision/retry@v1
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: composer remove kriswallsmith/buzz --dev --no-update --no-interaction
+        if: matrix.php >= 8
 
       - name: Select Laravel 6
         uses: nick-invision/retry@v1

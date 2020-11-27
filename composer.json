@@ -10,11 +10,11 @@
         }
     ],
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.2.5 || ^8.0",
         "graham-campbell/manager": "^4.5",
         "illuminate/contracts": "^6.0 || ^7.0 || ^8.0",
         "illuminate/support": "^6.0 || ^7.0 || ^8.0",
-        "toin0u/digitalocean-v2": "3.1.*"
+        "toin0u/digitalocean-v2": "3.2.*"
     },
     "require-dev": {
         "graham-campbell/analyzer": "^3.0",
@@ -22,7 +22,7 @@
         "guzzlehttp/guzzle" : "^7.0",
         "kriswallsmith/buzz": "^0.16",
         "mockery/mockery": "^1.3.1",
-        "phpunit/phpunit": "^8.5 || ^9.0"
+        "phpunit/phpunit": "^8.5.8 || ^9.3.7"
     },
     "suggest": {
         "kriswallsmith/buzz": "Enables the buzz connector.",
