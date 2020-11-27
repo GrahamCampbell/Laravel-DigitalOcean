@@ -19,9 +19,10 @@ use Illuminate\Contracts\Config\Repository;
 /**
  * This is the digitalocean manager class.
  *
- * @method \DigitalOceanV2\Client                           connection(string|null $name)
- * @method \DigitalOceanV2\Client                           reconnect(string|null $name)
- * @method array<string,\DigitalOceanV2\Client>             getConnections(string $name)
+ * @method \DigitalOceanV2\Client                           connection(string|null $name = null)
+ * @method \DigitalOceanV2\Client                           reconnect(string|null $name = null)
+ * @method void                                             disconnect(string|null $name = null)
+ * @method array<string,\DigitalOceanV2\Client>             getConnections()
  * @method \DigitalOceanV2\Api\Account                      account()
  * @method \DigitalOceanV2\Api\Action                       action()
  * @method \DigitalOceanV2\Api\Certificate                  certificate()

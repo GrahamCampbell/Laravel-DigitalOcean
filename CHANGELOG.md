@@ -6,6 +6,7 @@ CHANGE LOG
 
 * Support PHP 8
 * Require toin0u/digitalocean-v2 3.2.*
+* Manager phpdoc fixes
 
 
 ## V7.2 (09/11/2020)
