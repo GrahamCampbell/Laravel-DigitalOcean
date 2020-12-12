@@ -26,6 +26,7 @@ use Illuminate\Contracts\Config\Repository;
  * @method \DigitalOceanV2\Api\Account                      account()
  * @method \DigitalOceanV2\Api\Action                       action()
  * @method \DigitalOceanV2\Api\Certificate                  certificate()
+ * @method \DigitalOceanV2\Api\Database                     database()
  * @method \DigitalOceanV2\Api\Domain                       domain()
  * @method \DigitalOceanV2\Api\DomainRecord                 domainRecord()
  * @method \DigitalOceanV2\Api\Droplet                      droplet()

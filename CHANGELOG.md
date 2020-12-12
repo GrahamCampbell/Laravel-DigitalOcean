@@ -7,6 +7,11 @@ CHANGE LOG
 * Require toin0u/digitalocean-v2 4.0
 
 
+## V7.3.1 (12/12/2020)
+
+* Added missing phpdoc
+
+
 ## V7.3 (27/11/2020)
 
 * Support PHP 8
