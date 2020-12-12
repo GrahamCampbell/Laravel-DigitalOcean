@@ -30,14 +30,14 @@ Laravel DigitalOcean requires [PHP](https://php.net) 7.2-8.0. This particular ve
 | 5.4          | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                |
 | 6.0          | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :x:                |
 | 7.3          | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 8.0          | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
-To get the latest version, simply require the project using [Composer](https://getcomposer.org). 
-You will need to install at least one of the following dependencies: `guzzlehttp/guzzle:^6.3.1`, `guzzlehttp/guzzle:^7.0`, or `kriswallsmith/buzz:^0.16`.
+To get the latest version, simply require the project using [Composer](https://getcomposer.org). You will need to install any packages that "provide" `psr/http-client-implementation` and `psr/http-factory-implementation`. Most users will want:
 
 For example, to use Guzzle 7:
 
 ```bash
-$ composer require graham-campbell/digitalocean:^7.3 guzzlehttp/guzzle:^7.0.1
+$ composer require graham-campbell/digitalocean:^8.0 guzzlehttp/guzzle:^7.2 http-interop/http-factory-guzzle:^1.0
 ```
 
 Once installed, if you are not using automatic package discovery, then you need to register the `GrahamCampbell\DigitalOcean\DigitalOceanServiceProvider` service provider in your `config/app.php`.

@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V8.0 (UPCOMING)
+
+* Require toin0u/digitalocean-v2 4.0
+
+
 ## V7.3 (27/11/2020)
 
 * Support PHP 8

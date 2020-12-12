@@ -14,19 +14,15 @@
         "graham-campbell/manager": "^4.5",
         "illuminate/contracts": "^6.0 || ^7.0 || ^8.0",
         "illuminate/support": "^6.0 || ^7.0 || ^8.0",
-        "toin0u/digitalocean-v2": "3.2.*"
+        "toin0u/digitalocean-v2": "4.0.*"
     },
     "require-dev": {
         "graham-campbell/analyzer": "^3.0",
         "graham-campbell/testbench": "^5.4",
-        "guzzlehttp/guzzle" : "^7.0",
-        "kriswallsmith/buzz": "^0.16",
+        "guzzlehttp/guzzle": "^7.2",
+        "http-interop/http-factory-guzzle": "^1.0",
         "mockery/mockery": "^1.3.1",
         "phpunit/phpunit": "^8.5.8 || ^9.3.7"
-    },
-    "suggest": {
-        "kriswallsmith/buzz": "Enables the buzz connector.",
-        "guzzlehttp/guzzle": "Enables the guzzlehttp connector."
     },
     "autoload": {
         "psr-4": {
