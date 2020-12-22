@@ -76,7 +76,7 @@ This option (`'connections'`) is where each of the connections are setup for you
 
 ##### DigitalOceanManager
 
-This is the class of most interest. It is bound to the ioc container as `'digitalocean'` and can be accessed using the `Facades\DigitalOcean` facade. This class implements the `ManagerInterface` by extending `AbstractManager`. The interface and abstract class are both part of my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package, so you may want to go and checkout the docs for how to use the manager class over at [that repo](https://github.com/GrahamCampbell/Laravel-Manager#usage). Note that the connection class returned will always be an instance of `\DigitalOceanV2\Client`.
+This is the class of most interest. It is bound to the ioc container as `'digitalocean'` and can be accessed using the `Facades\DigitalOcean` facade. This class implements the `ManagerInterface` by extending `AbstractManager`. The interface and abstract class are both part of my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package, so you may want to go and checkout the docs for how to use the manager class over at [that repo](https://github.com/GrahamCampbell/Laravel-Manager#usage). Note that the connection class returned will always be an instance of `DigitalOceanV2\Client`.
 
 ##### Facades\DigitalOcean
 
@@ -101,7 +101,7 @@ DigitalOcean::size()->getAll();
 // this example is simple, and there are far more methods available
 ```
 
-The digitalocean manager will behave like it is a `\DigitalOceanV2\Client` class. If you want to call specific connections, you can do with the `connection` method:
+The digitalocean manager will behave like it is a `DigitalOceanV2\Client` class. If you want to call specific connections, you can do with the `connection` method:
 
 ```php
 use GrahamCampbell\DigitalOcean\Facades\DigitalOcean;
@@ -155,7 +155,7 @@ class Foo
 App::make('Foo')->bar();
 ```
 
-For more information on how to use the `\DigitalOceanV2\Client` class we are calling behind the scenes here, check out the docs at https://github.com/DigitalOceanPHP/Client, and the manager class at https://github.com/GrahamCampbell/Laravel-Manager#usage.
+For more information on how to use the `DigitalOceanV2\Client` class we are calling behind the scenes here, check out the docs at https://github.com/DigitalOceanPHP/Client/tree/3.2.2#examples, and the manager class at https://github.com/GrahamCampbell/Laravel-Manager#usage.
 
 ##### Further Information
 
