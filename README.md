@@ -155,7 +155,7 @@ class Foo
 App::make('Foo')->bar();
 ```
 
-For more information on how to use the `DigitalOceanV2\Client` class we are calling behind the scenes here, check out the docs at https://github.com/DigitalOceanPHP/Client/tree/3.2.2#examples, and the manager class at https://github.com/GrahamCampbell/Laravel-Manager#usage.
+For more information on how to use the `DigitalOceanV2\Client` class we are calling behind the scenes here, check out the docs at https://github.com/DigitalOceanPHP/Client/tree/4.0.0#examples, and the manager class at https://github.com/GrahamCampbell/Laravel-Manager#usage.
 
 ##### Further Information
 
