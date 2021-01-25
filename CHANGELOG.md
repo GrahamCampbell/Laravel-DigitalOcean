@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V8.1 (25/01/2021)
+
+* Require toin0u/digitalocean-v2 4.1
+
+
 ## V8.0 (22/12/2020)
 
 * Require toin0u/digitalocean-v2 4.0
