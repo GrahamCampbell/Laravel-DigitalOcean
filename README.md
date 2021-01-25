@@ -37,7 +37,7 @@ To get the latest version, simply require the project using [Composer](https://g
 For example, to use Guzzle 7:
 
 ```bash
-$ composer require graham-campbell/digitalocean:^8.0 guzzlehttp/guzzle:^7.2 http-interop/http-factory-guzzle:^1.0
+$ composer require "graham-campbell/digitalocean:^8.0" "guzzlehttp/guzzle:^7.2" "http-interop/http-factory-guzzle:^1.0"
 ```
 
 Once installed, if you are not using automatic package discovery, then you need to register the `GrahamCampbell\DigitalOcean\DigitalOceanServiceProvider` service provider in your `config/app.php`.
