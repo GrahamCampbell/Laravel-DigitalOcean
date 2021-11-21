@@ -6,10 +6,6 @@ Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](http
 ![Banner](https://user-images.githubusercontent.com/2829600/71477345-60993680-27e1-11ea-9161-d2c91c65f77a.png)
 
 <p align="center">
-<a href="https://xscode.com/grahamcampbell/Laravel-DigitalOcean"><img src="https://xscode.com/assets/promo-banner.svg" alt="Promo Banner"></img></a>
-</p>
-
-<p align="center">
 <a href="https://github.com/GrahamCampbell/Laravel-DigitalOcean/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Laravel-DigitalOcean/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/22224545"><img src="https://github.styleci.io/repos/22224545/shield" alt="StyleCI Status"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
@@ -20,7 +16,7 @@ Laravel DigitalOcean was created by, and is maintained by [Graham Campbell](http
 
 ## Installation
 
-Laravel DigitalOcean requires [PHP](https://php.net) 7.2-8.0. This particular version supports Laravel 6-8.
+Laravel DigitalOcean requires [PHP](https://php.net) 7.2-8.1. This particular version supports Laravel 6-8.
 
 | DigitalOcean | L5.1               | L5.2               | L5.3               | L5.4               | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 | L8                 |
 |--------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
@@ -164,7 +160,7 @@ There are other classes in this package that are not documented here. This is be
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an email to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/Laravel-DigitalOcean/security/policy).
+If you discover a security vulnerability within this package, please send an email to security@tidelift.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/Laravel-DigitalOcean/security/policy).
 
 
 ## License
