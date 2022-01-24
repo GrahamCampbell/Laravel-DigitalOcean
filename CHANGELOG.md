@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V8.4 (UPCOMING)
+## V8.4 (24/01/2022)
 
 * Support Laravel 9
 * Require toin0u/digitalocean-v2 4.4
