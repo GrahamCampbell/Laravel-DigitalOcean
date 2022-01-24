@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V8.4 (UPCOMING)
+
+* Support Laravel 9
+* Require toin0u/digitalocean-v2 4.4
+
+
 ## V8.3.1 (21/11/2021)
 
 * Provisional PHP 8.1 support
