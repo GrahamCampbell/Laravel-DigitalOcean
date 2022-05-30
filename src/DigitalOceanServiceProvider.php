@@ -79,7 +79,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
      */
     protected function registerHttpClientFactory()
     {
-        $this->app->singleton('gitlab.httpclientfactory', function () {
+        $this->app->singleton('digitalocean.httpclientfactory', function () {
             $psrFactory = new GuzzlePsrFactory();
 
             return new BuilderFactory(
@@ -90,7 +90,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
             );
         });
 
-        $this->app->alias('gitlab.httpclientfactory', BuilderFactory::class);
+        $this->app->alias('digitalocean.httpclientfactory', BuilderFactory::class);
     }
 
     /**
@@ -115,7 +115,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
     protected function registerDigitalOceanFactory()
     {
         $this->app->singleton('digitalocean.factory', function (Container $app) {
-            $builder = $app['bitbucket.httpclientfactory'];
+            $builder = $app['digitalocean.httpclientfactory'];
             $auth = $app['digitalocean.authfactory'];
 
             return new DigitalOceanFactory($builder, $auth);
