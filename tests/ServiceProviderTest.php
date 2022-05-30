@@ -15,9 +15,9 @@ namespace GrahamCampbell\Tests\DigitalOcean;
 
 use DigitalOceanV2\Client;
 use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
-use GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
+use GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory;
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 
 /**

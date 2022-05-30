@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\DigitalOcean;
 
-use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\Psr7\HttpFactory as GuzzlePsrFactory;
 use DigitalOceanV2\Client;
 use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
 use GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory;
+use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Psr7\HttpFactory as GuzzlePsrFactory;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
