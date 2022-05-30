@@ -13,8 +13,11 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\DigitalOcean;
 
+use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Psr7\HttpFactory as GuzzlePsrFactory;
 use DigitalOceanV2\Client;
 use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
+use GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
@@ -62,10 +65,32 @@ class DigitalOceanServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerHttpClientFactory();
         $this->registerAuthFactory();
         $this->registerDigitalOceanFactory();
         $this->registerManager();
         $this->registerBindings();
+    }
+
+    /**
+     * Register the http client factory class.
+     *
+     * @return void
+     */
+    protected function registerHttpClientFactory(()
+    {
+        $this->app->singleton('gitlab.httpclientfactory', function () {
+            $psrFactory = new GuzzlePsrFactory();
+
+            return new BuilderFactory(
+                new GuzzleClient(['connect_timeout' => 10, 'timeout' => 30]),
+                $psrFactory,
+                $psrFactory,
+                $psrFactory,
+            );
+        });
+
+        $this->app->alias('gitlab.httpclientfactory', BuilderFactory::class);
     }
 
     /**
@@ -90,9 +115,10 @@ class DigitalOceanServiceProvider extends ServiceProvider
     protected function registerDigitalOceanFactory()
     {
         $this->app->singleton('digitalocean.factory', function (Container $app) {
+            $builder = $app['bitbucket.httpclientfactory'];
             $auth = $app['digitalocean.authfactory'];
 
-            return new DigitalOceanFactory($auth);
+            return new DigitalOceanFactory($builder, $auth);
         });
 
         $this->app->alias('digitalocean.factory', DigitalOceanFactory::class);
@@ -139,6 +165,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
     public function provides()
     {
         return [
+            'digitalocean.httpclientfactory',
             'digitalocean.authfactory',
             'digitalocean.factory',
             'digitalocean',

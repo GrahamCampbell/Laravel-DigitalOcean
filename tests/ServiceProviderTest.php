@@ -15,6 +15,7 @@ namespace GrahamCampbell\Tests\DigitalOcean;
 
 use DigitalOceanV2\Client;
 use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
+use GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanManager;
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
@@ -27,6 +28,11 @@ use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 class ServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;
+
+    public function testHttpClientFactoryIsInjectable()
+    {
+        $this->assertIsInjectable(BuilderFactory::class);
+    }
 
     public function testAuthFactoryIsInjectable()
     {

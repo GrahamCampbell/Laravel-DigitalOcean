@@ -15,6 +15,7 @@ namespace GrahamCampbell\DigitalOcean;
 
 use DigitalOceanV2\Client;
 use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
+use GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory;
 use Illuminate\Support\Arr;
 use InvalidArgumentException;
 
@@ -26,6 +27,13 @@ use InvalidArgumentException;
 class DigitalOceanFactory
 {
     /**
+     * The http client builder factory instance.
+     *
+     * @var \GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory
+     */
+    protected $builder;
+
+    /**
      * The authenticator factory instance.
      *
      * @var \GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory
@@ -35,12 +43,14 @@ class DigitalOceanFactory
     /**
      * Create a new DigitalOcean factory instance.
      *
+     * @param \GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory $builder
      * @param \GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory $auth
      *
      * @return void
      */
-    public function __construct(AuthenticatorFactory $auth)
+    public function __construct(BuilderFactory $builder, AuthenticatorFactory $auth)
     {
+        $this->builder = $builder;
         $this->auth = $auth;
     }
 
@@ -55,7 +65,7 @@ class DigitalOceanFactory
      */
     public function make(array $config)
     {
-        $client = new Client();
+        $client = new Client($this->builder->make());
 
         if (!array_key_exists('method', $config)) {
             throw new InvalidArgumentException('The DigitalOcean factory requires an auth method.');

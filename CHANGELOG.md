@@ -2,6 +2,13 @@ CHANGE LOG
 ==========
 
 
+## V9.0 (UPGRADES)
+
+* Dropped PHP < 7.4
+* Dropped Laravel < 8
+* Require toin0u/digitalocean-v2 4.5
+
+
 ## V8.4 (24/01/2022)
 
 * Support Laravel 9
