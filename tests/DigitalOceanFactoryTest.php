@@ -16,7 +16,10 @@ namespace GrahamCampbell\Tests\DigitalOcean;
 use DigitalOceanV2\Client;
 use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
 use GrahamCampbell\DigitalOcean\DigitalOceanFactory;
+use GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
+use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Psr7\HttpFactory as GuzzlePsrFactory;
 use Http\Client\Common\HttpMethodsClientInterface;
 use Illuminate\Contracts\Cache\Factory;
 use InvalidArgumentException;
@@ -80,6 +83,15 @@ class DigitalOceanFactoryTest extends AbstractTestBenchTestCase
 
     protected function getFactory()
     {
-        return [new DigitalOceanFactory(new AuthenticatorFactory())];
+        $psrFactory = new GuzzlePsrFactory();
+
+        $builder = new BuilderFactory(
+            new GuzzleClient(['connect_timeout' => 10, 'timeout' => 30]),
+            $psrFactory,
+            $psrFactory,
+            $psrFactory,
+        );
+
+        return [new DigitalOceanFactory($builder, new AuthenticatorFactory())];
     }
 }
