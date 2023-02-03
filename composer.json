@@ -1,7 +1,20 @@
 {
     "name": "graham-campbell/digitalocean",
     "description": "DigitalOcean Is A DigitalOcean Bridge For Laravel",
-    "keywords": ["laravel", "framework", "digitalocean", "digitalocean-v2", "DigitalOceanV2", "digitalocean bridge", "bridge", "DigitalOcean", "Laravel DigitalOcean", "Laravel-DigitalOcean", "Graham Campbell", "GrahamCampbell"],
+    "keywords": [
+        "laravel",
+        "framework",
+        "digitalocean",
+        "digitalocean-v2",
+        "DigitalOceanV2",
+        "digitalocean bridge",
+        "bridge",
+        "DigitalOcean",
+        "Laravel DigitalOcean",
+        "Laravel-DigitalOcean",
+        "Graham Campbell",
+        "GrahamCampbell"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -13,16 +26,16 @@
     "require": {
         "php": "^7.4.15 || ^8.0.2",
         "graham-campbell/manager": "^4.7",
-        "guzzlehttp/guzzle": "^7.4.3",
+        "guzzlehttp/guzzle": "^7.4.3|^7.2",
         "guzzlehttp/psr7": "^2.2.1",
-        "illuminate/contracts": "^8.75 || ^9.0",
-        "illuminate/support": "^8.75 || ^9.0",
+        "illuminate/contracts": "^8.75 || ^9.0|^10.0",
+        "illuminate/support": "^8.75 || ^9.0|^10.0",
         "toin0u/digitalocean-v2": "4.5.*"
     },
     "require-dev": {
         "graham-campbell/analyzer": "^3.1",
         "graham-campbell/testbench": "^5.7",
-        "mockery/mockery": "^1.5",
+        "mockery/mockery": "^1.5|^1.4.4",
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
