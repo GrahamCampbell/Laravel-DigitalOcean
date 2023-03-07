@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\DigitalOcean;
 
+use DigitalOceanV2\Client;
 use GrahamCampbell\Manager\AbstractManager;
 use Illuminate\Contracts\Config\Repository;
 
@@ -53,7 +54,7 @@ class DigitalOceanManager extends AbstractManager
      *
      * @var \GrahamCampbell\DigitalOcean\DigitalOceanFactory
      */
-    protected $factory;
+    protected DigitalOceanFactory $factory;
 
     /**
      * Create a new digitalocean manager instance.
@@ -76,7 +77,7 @@ class DigitalOceanManager extends AbstractManager
      *
      * @return \DigitalOceanV2\Client
      */
-    protected function createConnection(array $config)
+    protected function createConnection(array $config): Client
     {
         return $this->factory->make($config);
     }
@@ -86,7 +87,7 @@ class DigitalOceanManager extends AbstractManager
      *
      * @return string
      */
-    protected function getConfigName()
+    protected function getConfigName(): string
     {
         return 'digitalocean';
     }
@@ -96,7 +97,7 @@ class DigitalOceanManager extends AbstractManager
      *
      * @return \GrahamCampbell\DigitalOcean\DigitalOceanFactory
      */
-    public function getFactory()
+    public function getFactory(): DigitalOceanFactory
     {
         return $this->factory;
     }

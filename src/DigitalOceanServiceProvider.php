@@ -35,7 +35,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->setupConfig();
     }
@@ -45,7 +45,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function setupConfig()
+    private function setupConfig(): void
     {
         $source = realpath($raw = __DIR__.'/../config/digitalocean.php') ?: $raw;
 
@@ -63,7 +63,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerHttpClientFactory();
         $this->registerAuthFactory();
@@ -77,9 +77,9 @@ class DigitalOceanServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerHttpClientFactory()
+    private function registerHttpClientFactory(): void
     {
-        $this->app->singleton('digitalocean.httpclientfactory', function () {
+        $this->app->singleton('digitalocean.httpclientfactory', function (): BuilderFactory {
             $psrFactory = new GuzzlePsrFactory();
 
             return new BuilderFactory(
@@ -98,9 +98,9 @@ class DigitalOceanServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerAuthFactory()
+    private function registerAuthFactory(): void
     {
-        $this->app->singleton('digitalocean.authfactory', function () {
+        $this->app->singleton('digitalocean.authfactory', function (): AuthenticatorFactory {
             return new AuthenticatorFactory();
         });
 
@@ -112,9 +112,9 @@ class DigitalOceanServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerDigitalOceanFactory()
+    private function registerDigitalOceanFactory(): void
     {
-        $this->app->singleton('digitalocean.factory', function (Container $app) {
+        $this->app->singleton('digitalocean.factory', function (Container $app): DigitalOceanFactory {
             $builder = $app['digitalocean.httpclientfactory'];
             $auth = $app['digitalocean.authfactory'];
 
@@ -129,9 +129,9 @@ class DigitalOceanServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerManager()
+    private function registerManager(): void
     {
-        $this->app->singleton('digitalocean', function (Container $app) {
+        $this->app->singleton('digitalocean', function (Container $app): DigitalOceanManager {
             $config = $app['config'];
             $factory = $app['digitalocean.factory'];
 
@@ -146,9 +146,9 @@ class DigitalOceanServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerBindings()
+    private function registerBindings(): void
     {
-        $this->app->bind('digitalocean.connection', function (Container $app) {
+        $this->app->bind('digitalocean.connection', function (Container $app): Client {
             $manager = $app['digitalocean'];
 
             return $manager->connection();
@@ -162,7 +162,7 @@ class DigitalOceanServiceProvider extends ServiceProvider
      *
      * @return string[]
      */
-    public function provides()
+    public function provides(): array
     {
         return [
             'digitalocean.httpclientfactory',

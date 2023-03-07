@@ -26,30 +26,29 @@ use TypeError;
  */
 class AuthenticatorFactoryTest extends AbstractTestCase
 {
-    public function testMakeTokenAuthenticator()
+    public function testMakeTokenAuthenticator(): void
     {
-        $return = $this->getFactory()->make('token');
+        $factory = new AuthenticatorFactory();
 
-        $this->assertInstanceOf(TokenAuthenticator::class, $return);
+        self::assertInstanceOf(TokenAuthenticator::class, $factory->make('token'));
     }
 
-    public function testMakeInvalidAuthenticator()
+    public function testMakeInvalidAuthenticator(): void
     {
+        $factory = new AuthenticatorFactory();
+
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Unsupported authentication method [foo].');
 
-        $this->getFactory()->make('foo');
+        $factory->make('foo');
     }
 
-    public function testMakeNoAuthenticator()
+    public function testMakeNoAuthenticator(): void
     {
+        $factory = new AuthenticatorFactory();
+
         $this->expectException(TypeError::class);
 
-        $this->getFactory()->make(null);
-    }
-
-    protected function getFactory()
-    {
-        return new AuthenticatorFactory();
+        $factory->make(null);
     }
 }

@@ -14,6 +14,8 @@ declare(strict_types=1);
 namespace GrahamCampbell\DigitalOcean;
 
 use DigitalOceanV2\Client;
+use DigitalOceanV2\HttpClient\Builder;
+use GrahamCampbell\DigitalOcean\Auth\Authenticator\AuthenticatorInterface;
 use GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory;
 use GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory;
 use Illuminate\Support\Arr;
@@ -31,14 +33,14 @@ class DigitalOceanFactory
      *
      * @var \GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory
      */
-    protected $builder;
+    private BuilderFactory $builder;
 
     /**
      * The authenticator factory instance.
      *
      * @var \GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory
      */
-    protected $auth;
+    private AuthenticatorFactory $auth;
 
     /**
      * Create a new DigitalOcean factory instance.
@@ -63,9 +65,9 @@ class DigitalOceanFactory
      *
      * @return \DigitalOceanV2\Client
      */
-    public function make(array $config)
+    public function make(array $config): Client
     {
-        $client = new Client($this->builder->make());
+        $client = new Client($this->getBuilder($config));
 
         if (!array_key_exists('method', $config)) {
             throw new InvalidArgumentException('The DigitalOcean factory requires an auth method.');
@@ -79,6 +81,28 @@ class DigitalOceanFactory
             return $client;
         }
 
-        return $this->auth->make($config['method'])->with($client)->authenticate($config);
+        return $this->getAuthenticator($config['method'])->with($client)->authenticate($config);
+    }
+
+    /**
+     * Get the http client builder.
+     *
+     * @return \DigitalOceanV2\HttpClient\Builder
+     */
+    protected function getBuilder(): Builder
+    {
+        return $this->builder->make();
+    }
+
+    /**
+     * Get the authenticator.
+     *
+     * @throws \InvalidArgumentException
+     *
+     * @return \GrahamCampbell\DigitalOcean\Auth\Authenticator\AuthenticatorInterface
+     */
+    protected function getAuthenticator(string $method): AuthenticatorInterface
+    {
+        return $this->auth->make($method);
     }
 }

@@ -29,27 +29,27 @@ class ServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;
 
-    public function testHttpClientFactoryIsInjectable()
+    public function testHttpClientFactoryIsInjectable(): void
     {
         $this->assertIsInjectable(BuilderFactory::class);
     }
 
-    public function testAuthFactoryIsInjectable()
+    public function testAuthFactoryIsInjectable(): void
     {
         $this->assertIsInjectable(AuthenticatorFactory::class);
     }
 
-    public function testDigitalOceanFactoryIsInjectable()
+    public function testDigitalOceanFactoryIsInjectable(): void
     {
         $this->assertIsInjectable(DigitalOceanFactory::class);
     }
 
-    public function testDigitalOceanManagerIsInjectable()
+    public function testDigitalOceanManagerIsInjectable(): void
     {
         $this->assertIsInjectable(DigitalOceanManager::class);
     }
 
-    public function testBindings()
+    public function testBindings(): void
     {
         $this->assertIsInjectable(Client::class);
 
@@ -57,7 +57,7 @@ class ServiceProviderTest extends AbstractTestCase
         $this->app['digitalocean']->reconnect();
         $new = $this->app['digitalocean.connection'];
 
-        $this->assertNotSame($original, $new);
-        $this->assertEquals($original, $new);
+        self::assertNotSame($original, $new);
+        self::assertEquals($original, $new);
     }
 }

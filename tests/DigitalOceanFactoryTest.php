@@ -31,57 +31,57 @@ use InvalidArgumentException;
  */
 class DigitalOceanFactoryTest extends AbstractTestBenchTestCase
 {
-    public function testMakeStandard()
+    public function testMakeStandard(): void
     {
-        $factory = $this->getFactory();
+        $factory = self::getFactory();
 
-        $client = $factory[0]->make(['token' => 'your-token', 'method' => 'token']);
+        $client = $factory->make(['token' => 'your-token', 'method' => 'token']);
 
-        $this->assertInstanceOf(Client::class, $client);
-        $this->assertInstanceOf(HttpMethodsClientInterface::class, $client->getHttpClient());
+        self::assertInstanceOf(Client::class, $client);
+        self::assertInstanceOf(HttpMethodsClientInterface::class, $client->getHttpClient());
     }
 
-    public function testMakeStandardExplicitUrl()
+    public function testMakeStandardExplicitUrl(): void
     {
-        $factory = $this->getFactory();
+        $factory = self::getFactory();
 
-        $client = $factory[0]->make(['token' => 'your-token', 'method' => 'token', 'url' => 'https://api.example.com']);
+        $client = $factory->make(['token' => 'your-token', 'method' => 'token', 'url' => 'https://api.example.com']);
 
-        $this->assertInstanceOf(Client::class, $client);
-        $this->assertInstanceOf(HttpMethodsClientInterface::class, $client->getHttpClient());
+        self::assertInstanceOf(Client::class, $client);
+        self::assertInstanceOf(HttpMethodsClientInterface::class, $client->getHttpClient());
     }
 
-    public function testMakeNoneMethod()
+    public function testMakeNoneMethod(): void
     {
-        $factory = $this->getFactory();
+        $factory = self::getFactory();
 
-        $client = $factory[0]->make(['method' => 'none']);
+        $client = $factory->make(['method' => 'none']);
 
-        $this->assertInstanceOf(Client::class, $client);
-        $this->assertInstanceOf(HttpMethodsClientInterface::class, $client->getHttpClient());
+        self::assertInstanceOf(Client::class, $client);
+        self::assertInstanceOf(HttpMethodsClientInterface::class, $client->getHttpClient());
     }
 
-    public function testMakeInvalidMethod()
+    public function testMakeInvalidMethod(): void
     {
-        $factory = $this->getFactory();
+        $factory = self::getFactory();
 
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Unsupported authentication method [bar].');
 
-        $factory[0]->make(['method' => 'bar']);
+        $factory->make(['method' => 'bar']);
     }
 
-    public function testMakeEmpty()
+    public function testMakeEmpty(): void
     {
-        $factory = $this->getFactory();
+        $factory = self::getFactory();
 
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('The DigitalOcean factory requires an auth method.');
 
-        $factory[0]->make([]);
+        $factory->make([]);
     }
 
-    protected function getFactory()
+    private static function getFactory(): DigitalOceanFactory
     {
         $psrFactory = new GuzzlePsrFactory();
 
@@ -92,6 +92,6 @@ class DigitalOceanFactoryTest extends AbstractTestBenchTestCase
             $psrFactory,
         );
 
-        return [new DigitalOceanFactory($builder, new AuthenticatorFactory())];
+        return new DigitalOceanFactory($builder, new AuthenticatorFactory());
     }
 }

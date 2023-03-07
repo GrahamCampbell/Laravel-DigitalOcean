@@ -27,25 +27,25 @@ use Mockery;
  */
 class DigitalOceanManagerTest extends AbstractTestBenchTestCase
 {
-    public function testCreateConnection()
+    public function testCreateConnection(): void
     {
         $config = ['token' => 'your-token'];
 
-        $manager = $this->getManager($config);
+        $manager = self::getManager($config);
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('digitalocean.default')->andReturn('main');
 
-        $this->assertSame([], $manager->getConnections());
+        self::assertSame([], $manager->getConnections());
 
         $return = $manager->connection();
 
-        $this->assertInstanceOf(Client::class, $return);
+        self::assertInstanceOf(Client::class, $return);
 
-        $this->assertArrayHasKey('main', $manager->getConnections());
+        self::assertArrayHasKey('main', $manager->getConnections());
     }
 
-    protected function getManager(array $config)
+    private static function getManager(array $config): DigitalOceanManager
     {
         $repo = Mockery::mock(Repository::class);
         $factory = Mockery::mock(DigitalOceanFactory::class);
