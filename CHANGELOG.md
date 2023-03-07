@@ -2,6 +2,15 @@ CHANGE LOG
 ==========
 
 
+## V10.0 (XX/03/2023)
+
+* Support Laravel 8-10 only
+* Support PHP 7.4-8.2 only
+* Added additional types
+* Removed various getter methods
+* Require toin0u/digitalocean-v2 4.6
+
+
 ## V9.0 (31/05/2022)
 
 * Dropped PHP < 7.4
