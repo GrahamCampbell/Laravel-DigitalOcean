@@ -17,7 +17,7 @@
         "guzzlehttp/psr7": "^2.4",
         "illuminate/contracts": "^8.75 || ^9.0 || ^10.0",
         "illuminate/support": "^8.75 || ^9.0 || ^10.0",
-        "toin0u/digitalocean-v2": "4.6.*"
+        "toin0u/digitalocean-v2": "4.7.*"
     },
     "require-dev": {
         "graham-campbell/analyzer": "^4.0",

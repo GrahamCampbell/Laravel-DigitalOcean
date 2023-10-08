@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V10.1 (XX/10/2023)
+
+* Require toin0u/digitalocean-v2 4.7
+
+
 ## V10.0 (07/03/2023)
 
 * Support Laravel 8-10 only
