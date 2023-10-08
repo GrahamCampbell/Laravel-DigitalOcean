@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V10.1 (XX/10/2023)
+## V10.1 (08/10/2023)
 
 * Require toin0u/digitalocean-v2 4.7
 
