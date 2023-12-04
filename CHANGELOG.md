@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V10.3 (04/12/2023)
+
+* Added PHP 8.3 support
+* Require toin0u/digitalocean-v2 4.9
+
+
 ## V10.2 (08/10/2023)
 
 * Require toin0u/digitalocean-v2 4.8
