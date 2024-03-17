@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V10.4 (17/03/2024)
+
+* Added Laravel 11 support
+
+
 ## V10.3 (04/12/2023)
 
 * Added PHP 8.3 support
