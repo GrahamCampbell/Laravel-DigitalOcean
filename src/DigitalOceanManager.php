@@ -26,6 +26,7 @@ use Illuminate\Contracts\Config\Repository;
  * @method array<string,\DigitalOceanV2\Client>           getConnections()
  * @method \DigitalOceanV2\Api\Account                    account()
  * @method \DigitalOceanV2\Api\Action                     action()
+ * @method \DigitalOceanV2\Api\App                        app()
  * @method \DigitalOceanV2\Api\CdnEndpoint                cdnEndpoint()
  * @method \DigitalOceanV2\Api\Certificate                certificate()
  * @method \DigitalOceanV2\Api\Database                   database()
