@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V10.4.1 (02/03/2025)
+
+* Added missing `app()` doc
+
+
 ## V10.4 (17/03/2024)
 
 * Added Laravel 11 support
