@@ -2,6 +2,13 @@ CHANGE LOG
 ==========
 
 
+## V11.0 (XX/03/2025)
+
+* Support only PHP 8.1-8.4
+* Support only Laravel 10-12
+* Require toin0u/digitalocean-v2 5.0
+
+
 ## V10.4.1 (02/03/2025)
 
 * Added missing `app()` doc
