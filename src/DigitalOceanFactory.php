@@ -29,20 +29,6 @@ use InvalidArgumentException;
 class DigitalOceanFactory
 {
     /**
-     * The http client builder factory instance.
-     *
-     * @var \GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory
-     */
-    private BuilderFactory $builder;
-
-    /**
-     * The authenticator factory instance.
-     *
-     * @var \GrahamCampbell\DigitalOcean\Auth\AuthenticatorFactory
-     */
-    private AuthenticatorFactory $auth;
-
-    /**
      * Create a new DigitalOcean factory instance.
      *
      * @param \GrahamCampbell\DigitalOcean\HttpClient\BuilderFactory $builder
@@ -50,10 +36,10 @@ class DigitalOceanFactory
      *
      * @return void
      */
-    public function __construct(BuilderFactory $builder, AuthenticatorFactory $auth)
-    {
-        $this->builder = $builder;
-        $this->auth = $auth;
+    public function __construct(
+        private readonly BuilderFactory $builder,
+        private readonly AuthenticatorFactory $auth,
+    ) {
     }
 
     /**

@@ -23,11 +23,6 @@ use InvalidArgumentException;
  */
 abstract class AbstractAuthenticator implements AuthenticatorInterface
 {
-    /**
-     * The client to perform the authentication on.
-     *
-     * @var \DigitalOceanV2\Client|null
-     */
     private ?Client $client = null;
 
     /**

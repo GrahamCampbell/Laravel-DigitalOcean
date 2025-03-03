@@ -55,12 +55,7 @@ use Illuminate\Contracts\Config\Repository;
  */
 class DigitalOceanManager extends AbstractManager
 {
-    /**
-     * The factory instance.
-     *
-     * @var \GrahamCampbell\DigitalOcean\DigitalOceanFactory
-     */
-    protected DigitalOceanFactory $factory;
+    protected readonly DigitalOceanFactory $factory;
 
     /**
      * Create a new digitalocean manager instance.
