@@ -33,6 +33,7 @@ use Illuminate\Contracts\Config\Repository;
  * @method \DigitalOceanV2\Api\Domain                     domain()
  * @method \DigitalOceanV2\Api\DomainRecord               domainRecord()
  * @method \DigitalOceanV2\Api\Droplet                    droplet()
+ * @method \DigitalOceanV2\Api\Firewall                   firewall()
  * @method \DigitalOceanV2\Api\FloatingIp                 floatingIp()
  * @method \DigitalOceanV2\Api\Image                      image()
  * @method \DigitalOceanV2\Api\Key                        key()
