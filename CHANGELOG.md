@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V11.1.1 (UPCOMING)
+## V11.1.1 (09/05/2026)
 
 * Added missing `firewall()` manager method doc
 
