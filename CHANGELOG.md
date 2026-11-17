@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V11.1.2 (UPCOMING)
+
+* Require toin0u/digitalocean-v2 5.1.2
+
+
 ## V11.1.1 (09/05/2026)
 
 * Added missing `firewall()` manager method doc
